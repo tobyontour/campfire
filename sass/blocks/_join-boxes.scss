@@ -1,0 +1,43 @@
+// <li class="join-boxes__item join-boxes__item--beavers"></li>
+//       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/beavers/">
+//         <div class="join-boxes__logo"></div>
+//         <div class="join-boxes__text">
+//           <p>6-8 years</p>
+//           <p>Make friends and try new activities</p>
+//         </div>
+//       </a>
+// 		</li>
+
+.join-boxes {
+  background-color: beige;
+  outline: 2px dotted red;
+  &__link {
+    text-decoration: none;
+    color: $color__text-inverted;
+  }
+  &__item {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    color: $color__text-inverted;
+
+    &--beavers {
+      background-color: $color__beavers;
+    }
+    &--cubs {
+      background-color: $color__cubs;
+    }
+    &--scouts {
+      background-color: $color__scouts;
+    }
+    &--explorers {
+      background-color: $color__explorers;
+    }
+    &--network {
+      background-color: $color__network;
+    }
+    &--volunteers {
+      background-color: $color__volunteers;
+    }
+  }
+}

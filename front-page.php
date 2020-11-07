@@ -14,42 +14,58 @@
 
 get_header();
 ?>
+<main id="primary" class="site-main">
 
-	<main id="primary" class="site-main">
-		<?php
-		if ( have_posts() ) :
+	<ul class="join-boxes">
+	  <li class="join-boxes__item join-boxes__item--beavers">
+      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/beavers/">
+        <div class="join-boxes__logo"></div>
+        <div class="join-boxes__text">
+          <p>6-8 years</p>
+          <p>Make friends and try new activities</p>
+        </div>
+      </a>
+		</li>
+		<li class="join-boxes__item join-boxes__item--cubs">
+      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/cubs/">
+			  <div class="join-boxes__logo"></div>
+        <div class="join-boxes__text">
+          <p>8-10½ years</p>
+          <p>Learn practical skills while having adventures</p>
+        </div>
+      </a>
+		</li>
+		<li class="join-boxes__item join-boxes__item--scouts">
+      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/scouts/">
+			  <div class="join-boxes__logo"></div>
+        <div class="join-boxes__text">
+          <p>10½-14 years</p>
+          <p>Build confidence, resilience and a sense of adventure</p>
+        </div>
+      </a>
+		</li>
+		<li class="join-boxes__item join-boxes__item--explorers">
+      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/explorers/">
+			  <div class="join-boxes__logo"></div>
+        <div class="join-boxes__text">
+          <p>10½-14 years</p>
+          <p>Build confidence, resilience and a sense of adventure</p>
+        </div>
+      </a>
+		</li>
+		<li class="join-boxes__item join-boxes__item--volunteers">
+      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/leaders/">
+			  <div class="join-boxes__logo"></div>
+        <div class="join-boxes__text">
+          <h2>Volunteers</h2>
+          <p>All adults welcome!</p>
+          <p>Develop young people, have fun and build new skills</p>
+        </div>
+      </a>
+		</li>
+	</ul>
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_sidebar();
