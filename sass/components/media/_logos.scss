@@ -1,0 +1,77 @@
+%beavers-background {
+	background-color: $beavers-colour;
+}
+
+%cubs-background {
+	background-color: $cubs-colour;
+}
+
+%scouts-background {
+	background-color: $scouts-colour;
+}
+
+%explorers-background {
+	background-color: $explorers-colour;
+}
+
+%network-background {
+	background-color: $network-colour;
+}
+
+%volunteer-background {
+	background-color: $volunteer-colour;
+}
+
+%section-logo {
+	background-position-y: 0;
+	background-position-x: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.beavers-logo {
+
+	@extend %section-logo;
+	background-image: url(logos/beavers-logo-white-png.png);
+	background-color: $color__beavers;
+}
+
+.cubs-logo {
+
+	@extend %section-logo;
+	background-image: url(logos/cubs-logo-white-png.png);
+	background-color: $color__cubs;
+}
+
+.scouts-logo {
+
+	@extend %section-logo;
+	background-image: url(logos/scouts-logo-white-png.png);
+	background-color: $color__scouts;
+}
+
+.explorers-logo {
+
+	@extend %section-logo;
+	background-image: url(logos/explorers-logo-white-png.png);
+	background-color: $color__explorers;
+}
+
+.network-logo {
+
+	@extend %section-logo;
+	background-image: url(logos/network-logo-white-png.png);
+	background-color: $color__network;
+}
+
+.volunteer-logo {
+
+	@extend %section-logo;
+	// background-image: url(logos/network-logo-white-png.png);
+	background-color: $color__volunteer;
+
+	h2 {
+		color: #fff;
+		font-size: 22px;
+	}
+}

@@ -1,3 +1,21 @@
+$color__scout-purple: #7413dc;
+$color__scout-green: #23a950; // Cub section colour
+$color__scout-blue: #006ddf; // Beaver section colour
+$color__scout-navy: #003982; // Explorer section colour
+$color__scout-red: #e22e12;
+$color__scout-teal: #00a794;
+$color__scout-yellow: #ffe627;
+$color__scout-pink: #ffb4e5;
+$color__scout-dark-green: #004851; // Scout section colour
+$color__scout-black: #000; // Network section colour
+
+$color__beavers: $color__scout-blue;
+$color__cubs: $color__scout-green;
+$color__scouts: $color__scout-dark-green;
+$color__explorers: $color__scout-navy;
+$color__network: $color__scout-black;
+$color__volunteer: $color__scout-purple;
+
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
