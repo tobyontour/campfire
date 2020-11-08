@@ -14,12 +14,17 @@
 
 get_header();
 ?>
+<style>
+	.site-main {
+		background-image: url(<?php header_image(); ?>);
+	}
+</style>
 <main id="primary" class="site-main">
 
 	<ul class="join-boxes">
 	  <li class="join-boxes__item join-boxes__item--beavers">
       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/beavers/">
-        <div class="join-boxes__logo"></div>
+        <div class="join-boxes__logo beavers-logo">Beavers</div>
         <div class="join-boxes__text">
           <p>6-8 years</p>
           <p>Make friends and try new activities</p>
@@ -28,7 +33,7 @@ get_header();
 		</li>
 		<li class="join-boxes__item join-boxes__item--cubs">
       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/cubs/">
-			  <div class="join-boxes__logo"></div>
+			  <div class="join-boxes__logo cubs-logo">Cubs</div>
         <div class="join-boxes__text">
           <p>8-10½ years</p>
           <p>Learn practical skills while having adventures</p>
@@ -37,7 +42,7 @@ get_header();
 		</li>
 		<li class="join-boxes__item join-boxes__item--scouts">
       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/scouts/">
-			  <div class="join-boxes__logo"></div>
+			  <div class="join-boxes__logo scouts-logo">Scouts</div>
         <div class="join-boxes__text">
           <p>10½-14 years</p>
           <p>Build confidence, resilience and a sense of adventure</p>
@@ -46,7 +51,16 @@ get_header();
 		</li>
 		<li class="join-boxes__item join-boxes__item--explorers">
       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/explorers/">
-			  <div class="join-boxes__logo"></div>
+			  <div class="join-boxes__logo explorers-logo">Explorers</div>
+        <div class="join-boxes__text">
+          <p>10½-14 years</p>
+          <p>Build confidence, resilience and a sense of adventure</p>
+        </div>
+      </a>
+		</li>
+		<li class="join-boxes__item join-boxes__item--network">
+      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/network/">
+			  <div class="join-boxes__logo network-logo">Network</div>
         <div class="join-boxes__text">
           <p>10½-14 years</p>
           <p>Build confidence, resilience and a sense of adventure</p>
@@ -55,9 +69,8 @@ get_header();
 		</li>
 		<li class="join-boxes__item join-boxes__item--volunteers">
       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/leaders/">
-			  <div class="join-boxes__logo"></div>
+			  <div class="join-boxes__logo volunteers-logo">Volunteers</div>
         <div class="join-boxes__text">
-          <h2>Volunteers</h2>
           <p>All adults welcome!</p>
           <p>Develop young people, have fun and build new skills</p>
         </div>

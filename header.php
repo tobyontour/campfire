@@ -38,10 +38,10 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$scout_group_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $scout_group_theme_description || is_customize_preview() ) :
+			$campfire_description = get_bloginfo( 'description', 'display' );
+			if ( $campfire_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $scout_group_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="site-description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 

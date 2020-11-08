@@ -12,7 +12,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'scout_group_theme_setup' ) ) :
+if ( ! function_exists( 'campfire_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'scout_group_theme_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function scout_group_theme_setup() {
+	function campfire_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -75,7 +75,7 @@ if ( ! function_exists( 'scout_group_theme_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'scout_group_theme_custom_background_args',
+				'campfire_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -102,7 +102,7 @@ if ( ! function_exists( 'scout_group_theme_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'scout_group_theme_setup' );
+add_action( 'after_setup_theme', 'campfire_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,17 +111,17 @@ add_action( 'after_setup_theme', 'scout_group_theme_setup' );
  *
  * @global int $content_width
  */
-function scout_group_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'scout_group_theme_content_width', 640 );
+function campfire_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'campfire_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'scout_group_theme_content_width', 0 );
+add_action( 'after_setup_theme', 'campfire_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function scout_group_theme_widgets_init() {
+function campfire_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'scout-group-theme' ),
@@ -134,12 +134,12 @@ function scout_group_theme_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'scout_group_theme_widgets_init' );
+add_action( 'widgets_init', 'campfire_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function scout_group_theme_scripts() {
+function campfire_scripts() {
 	wp_enqueue_style( 'scout-group-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'scout-group-theme-style', 'rtl', 'replace' );
 
@@ -149,7 +149,7 @@ function scout_group_theme_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'scout_group_theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'campfire_scripts' );
 
 /**
  * Implement the Custom Header feature.

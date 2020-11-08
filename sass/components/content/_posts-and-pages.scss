@@ -21,3 +21,8 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+#primary {
+	max-width: 1200px;
+	@include center-block;
+}

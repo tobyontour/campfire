@@ -8,12 +8,12 @@
 # npm run lint:js : checks all JavaScript files against JavaScript Coding Standards.
 # npm run bundle : generates a .zip archive for distribution, excluding development and system files.
 
+watch:
+	npm run watch
+
 install:
 	composer install
 	npm install
-
-watch:
-	npm run watch
 
 build:
 	npm run bundle
