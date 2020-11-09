@@ -33,7 +33,7 @@ function campfire_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'scout-group-theme-style',
+				'stylesheet' => 'campfire-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',

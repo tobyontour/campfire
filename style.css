@@ -9,7 +9,7 @@ Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: scout-group-theme
+Text Domain: campfire
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -388,7 +388,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -716,6 +716,50 @@ textarea {
 	flex: 1 0 50%;
 }
 
+/* Logos
+--------------------------------------------- */
+.beavers-logo, .cubs-logo, .scouts-logo, .explorers-logo, .network-logo, .volunteers-logo {
+	background-position-y: center;
+	background-position-x: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	text-indent: -9999px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.beavers-logo {
+	background-image: url(images/logos/beavers-logo.png);
+	background-color: #006ddf;
+}
+
+.cubs-logo {
+	background-image: url(images/logos/cubs-logo.png);
+	background-color: #23a950;
+}
+
+.scouts-logo {
+	background-image: url(images/logos/scouts-logo.png);
+	background-color: #004851;
+}
+
+.explorers-logo {
+	background-image: url(images/logos/explorers-logo.png);
+	background-color: #003982;
+}
+
+.network-logo {
+	background-image: url(images/logos/network-logo.png);
+	background-color: #000;
+}
+
+.volunteers-logo {
+	background-color: #7413dc;
+	text-indent: 0;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -749,10 +793,64 @@ textarea {
 	margin-right: auto;
 }
 
-.home .site-main {
+.front-page {
 	background-repeat: no-repeat;
 	background-size: contain;
-	padding-top: 150px;
+}
+
+#masthead {
+	position: relative;
+}
+
+.site-branding {
+	display: inline-block;
+	width: auto;
+	padding: 40px;
+}
+
+.site-branding__logo {
+	background-image: url(images/logos/logo-linear-trimmed.png);
+	background-repeat: no-repeat;
+	width: 261px;
+	height: 74px;
+}
+
+.site-branding__title {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 28px;
+}
+
+.site-branding__title:visited {
+	color: #fff;
+}
+
+.site-branding__description {
+	color: #fff;
+}
+
+.main-navigation {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: auto;
+}
+
+.main-navigation button.menu-toggle {
+	background-color: inherit;
+	border: none;
+}
+
+.body__background-image {
+	position: absolute;
+	width: 100%;
+	height: 390px;
+	z-index: -1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-y: center;
+	background-position-x: center;
 }
 
 #colophon {
@@ -870,50 +968,6 @@ textarea {
 	display: block;
 }
 
-/* Logos
---------------------------------------------- */
-.beavers-logo, .cubs-logo, .scouts-logo, .explorers-logo, .network-logo, .volunteers-logo {
-	background-position-y: center;
-	background-position-x: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-	text-indent: -9999px;
-	color: #fff;
-	font-size: 16px;
-	font-weight: bold;
-	text-align: center;
-}
-
-.beavers-logo {
-	background-image: url(images/logos/beavers-logo.png);
-	background-color: #006ddf;
-}
-
-.cubs-logo {
-	background-image: url(images/logos/cubs-logo.png);
-	background-color: #23a950;
-}
-
-.scouts-logo {
-	background-image: url(images/logos/scouts-logo.png);
-	background-color: #004851;
-}
-
-.explorers-logo {
-	background-image: url(images/logos/explorers-logo.png);
-	background-color: #003982;
-}
-
-.network-logo {
-	background-image: url(images/logos/network-logo.png);
-	background-color: #000;
-}
-
-.volunteers-logo {
-	background-color: #7413dc;
-	text-indent: 0;
-}
-
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -1015,6 +1069,9 @@ textarea {
 .join-boxes__link {
 	text-decoration: none;
 	color: #fff;
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .join-boxes__link:hover {

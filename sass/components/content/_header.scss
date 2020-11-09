@@ -1,0 +1,53 @@
+#masthead {
+  position: relative;
+}
+
+.site-branding {
+  display: inline-block;
+  width: auto;
+  padding: $gap * 4;
+  &__logo {
+    background-image: $url__org-logo;
+    background-repeat: no-repeat;
+    width: 261px;
+    height: 74px;
+  }
+  &__title {
+    color: $color__text-inverted;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 28px;
+    &:visited {
+      color: $color__text-inverted;
+    }
+  }
+  &__description {
+    color: $color__text-inverted;
+  }
+}
+
+.main-navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  button.menu-toggle {
+    background-color: inherit;
+    border: none;
+  }
+  @media screen and (max-width: 600px) {
+
+
+  }
+}
+
+.body__background-image {
+  position: absolute;
+  width: 100%;
+  height: 390px;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: center;
+}

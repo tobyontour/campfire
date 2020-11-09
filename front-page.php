@@ -14,12 +14,7 @@
 
 get_header();
 ?>
-<style>
-	.site-main {
-		background-image: url(<?php header_image(); ?>);
-	}
-</style>
-<main id="primary" class="site-main">
+<main id="primary" class="site-main front-page">
 
 	<ul class="join-boxes">
 	  <li class="join-boxes__item join-boxes__item--beavers">
@@ -81,5 +76,5 @@ get_header();
 </main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
