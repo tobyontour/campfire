@@ -107,3 +107,34 @@
 		flex: 1 0 50%;
 	}
 }
+
+.main-navigation {
+	position: absolute;
+	top: 0;
+  button.menu-toggle {
+    background-color: inherit;
+    border: none;
+	}
+	.menu-top-menu-container {
+		@include center-block;
+		position: relative;
+		width: 100%;
+		max-width: $size__content;
+	}
+	.nav-menu {
+		right: 0;
+    position: absolute;
+		padding: $gap;
+	}
+  @media screen and (max-width: 600px) {
+  }
+  @media screen and (min-width: 600px) {
+    .menu-item {
+      margin-left: 1em;
+      a {
+        color: $color__text-inverted;
+        font-weight: bold;
+      }
+    }
+  }
+}

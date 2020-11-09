@@ -10,13 +10,16 @@
     display: block;
     width: 100%;
     height: 100%;
+    &:visited {
+      color: $color__text-inverted;
+    }
     &:hover {
       color: $color__scout-yellow;
     }
   }
   &__logo {
     width: 100%;
-    height: 2em;
+    height: 32px;
   }
   &__text {
     p:last-child {
@@ -31,8 +34,17 @@
     color: $color__text-inverted;
     list-style: none;
     vertical-align: top;
-    padding: $gap * 2;
+    padding: $gap * 1.5;
     text-align: center;
+
+    p {
+      margin: 0.5em 0;
+    }
+
+    .volunteers-logo {
+      font-weight: bold;
+      font-size: 25px;
+    }
 
     &--beavers {
       background-color: $color__beavers;
