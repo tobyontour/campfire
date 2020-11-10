@@ -6,15 +6,24 @@
   .main-content {
     margin-top: $gap;
     display: flex;
+    flex-wrap: wrap;
     article {
-      width: 60%;
+      width: 100%;
       margin: 0 $gap;
     }
-    aside {
-      padding: 0 $gap * 2;
-      width: 38%;
-      background-color: $color__scout-teal;
-      color: $color__text-inverted;
+    &.has-sidebar {
+      @include tablet-plus {
+        article {
+          width: 60%;
+          margin: 0 $gap;
+        }
+        aside {
+          padding: 0 $gap * 2;
+          width: 38%;
+          background-color: $color__scout-teal;
+          color: $color__text-inverted;
+        }
+      }
     }
     @mixin desktop {
       padding: 0 $gap;

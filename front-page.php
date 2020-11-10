@@ -81,7 +81,7 @@ get_header();
 		</li>
   </ul>
 
-  <div class="main-content">
+  <div class="main-content<?php if ( is_active_sidebar('sidebar-1') ) { echo " has-sidebar"; } ?>">
   <?php
 		while ( have_posts() ) :
 			the_post();
@@ -95,7 +95,7 @@ get_header();
 
 		endwhile; // End of the loop.
     ?>
-    <?php get_sidebar(); ?>
+    <?php get_sidebar('sidebar-1'); ?>
   </div>
 
   <?php if ( is_active_sidebar( 'home-1' ) ) : ?>

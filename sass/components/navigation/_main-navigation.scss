@@ -1,31 +1,34 @@
 .main-navigation {
-  position: absolute;
-  top: 0;
-  // display: flex;
-  // justify-content: flex-end;
+  position: fixed;
+  top: 30px;
+  z-index: 10;
   background-color: $color__shaded-dark;
+
+  &.scrolled {
+    background-color: $color__scout-teal;
+  }
+
   button.menu-toggle {
     background-color: inherit;
     border: none;
-	}
+  }
+
 	.menu-top-menu-container {
     @include center-section;
-	}
+  }
+
 	.nav-menu {
     margin-left: auto;
     margin-right: 0;
     float: right;
 		padding: $gap;
-	}
-  @media screen and (max-width: 600px) {
   }
-  @media screen and (min-width: 600px) {
-    .menu-item {
-      margin-left: 1em;
-      a {
-        color: $color__text-inverted;
-        font-weight: bold;
-      }
+
+  .menu-item {
+    margin-left: 1em;
+    a {
+      color: $color__text-inverted;
+      font-weight: bold;
     }
   }
 }
