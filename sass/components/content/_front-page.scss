@@ -2,4 +2,55 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 130px;
+
+  .main-content {
+    margin-top: $gap;
+    display: flex;
+    article {
+      width: 60%;
+      margin: 0 $gap;
+    }
+    aside {
+      padding: 0 $gap * 2;
+      width: 38%;
+      background-color: $color__scout-teal;
+      color: $color__text-inverted;
+    }
+    @mixin desktop {
+      padding: 0 $gap;
+    }
+  }
 }
+
+.banner-sidebar {
+  background-color: $color__scout-yellow;
+  @include center-section;
+  padding: $gap * 1.5;
+  .widget:last-child {
+    margin-bottom: 0;
+  }
+  .widget-title {
+    margin-top: 0;
+  }
+  .textwidget p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.banner-sidebar + .front-page {
+  margin-top: $gap * 2;
+}
+
+.primary-sidebar {
+  display: flex;
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-between;
+  .widget {
+    width: 45%;
+    // margin: $gap * 2;
+  }
+
+}
+

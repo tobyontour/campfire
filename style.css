@@ -635,10 +635,12 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 #primary {
-	max-width: 100%;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
 }
 
 /*--------------------------------------------------------------
@@ -739,7 +741,7 @@ textarea {
 .main-navigation {
 	position: absolute;
 	top: 0;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .main-navigation button.menu-toggle {
@@ -759,7 +761,8 @@ textarea {
 .main-navigation .nav-menu {
 	margin-left: auto;
 	margin-right: 0;
-	padding: 5px;
+	float: right;
+	padding: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -848,6 +851,61 @@ textarea {
 	margin-top: 130px;
 }
 
+.front-page .main-content {
+	margin-top: 10px;
+	display: flex;
+}
+
+.front-page .main-content article {
+	width: 60%;
+	margin: 0 10px;
+}
+
+.front-page .main-content aside {
+	padding: 0 20px;
+	width: 38%;
+	background-color: #00a794;
+	color: #fff;
+}
+
+.banner-sidebar {
+	background-color: #ffe627;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	padding: 15px;
+}
+
+.banner-sidebar .widget:last-child {
+	margin-bottom: 0;
+}
+
+.banner-sidebar .widget-title {
+	margin-top: 0;
+}
+
+.banner-sidebar .textwidget p:last-child {
+	margin-bottom: 0;
+}
+
+.banner-sidebar + .front-page {
+	margin-top: 20px;
+}
+
+.primary-sidebar {
+	display: flex;
+	flex-flow: row wrap;
+	/* Then we define how is distributed the remaining space */
+	justify-content: space-between;
+}
+
+.primary-sidebar .widget {
+	width: 45%;
+}
+
 #masthead {
 	position: relative;
 }
@@ -855,7 +913,7 @@ textarea {
 .site-branding {
 	display: inline-block;
 	width: auto;
-	padding: 40px;
+	padding: 60px 40px 20px;
 }
 
 .site-branding__logo {
@@ -892,6 +950,7 @@ textarea {
 }
 
 #colophon {
+	position: relative;
 	background-color: #7413dc;
 	color: #fff;
 	min-height: 200px;
@@ -899,7 +958,11 @@ textarea {
 	margin-top: 50px;
 }
 
-.site-info {
+#colophon a {
+	color: #fff;
+}
+
+#colophon .site-info {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -920,6 +983,52 @@ textarea {
 
 /* Widgets
 --------------------------------------------- */
+/* calendar widget */
+#wp-calendar {
+	width: 100%;
+	max-width: 40em;
+}
+
+#wp-calendar caption {
+	text-align: right;
+	color: #333;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+#wp-calendar thead th {
+	padding-bottom: 10px;
+}
+
+#wp-calendar tbody {
+	color: #aaa;
+}
+
+#wp-calendar tbody td {
+	background: #f5f5f5;
+	border: 1px solid #fff;
+	text-align: center;
+	padding: 8px;
+}
+
+#wp-calendar tbody td:hover {
+	background: #fff;
+}
+
+#wp-calendar tbody .pad {
+	background: none;
+}
+
+#wp-calendar tfoot #next {
+	text-transform: uppercase;
+	text-align: right;
+}
+
+#wp-calendar tfoot #prev {
+	text-transform: uppercase;
+	padding-top: 10px;
+}
+
 .widget {
 	margin: 0 0 1.5em;
 }

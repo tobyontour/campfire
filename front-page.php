@@ -14,6 +14,12 @@
 
 get_header();
 ?>
+<?php if ( is_active_sidebar( 'banner' ) ) : ?>
+  <div class="banner-sidebar widget-area">
+    <?php dynamic_sidebar( 'banner' ); ?>
+  </div>
+<?php endif; ?>
+
 <main id="primary" class="site-main front-page">
 
 	<ul class="join-boxes">
@@ -73,8 +79,30 @@ get_header();
         </div>
       </a>
 		</li>
-	</ul>
+  </ul>
 
+  <div class="main-content">
+  <?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+    ?>
+    <?php get_sidebar(); ?>
+  </div>
+
+  <?php if ( is_active_sidebar( 'home-1' ) ) : ?>
+    <div id="primary-sidebar" class="primary-sidebar widget-area">
+      <?php dynamic_sidebar( 'home-1' ); ?>
+    </div><!-- #primary-sidebar -->
+  <?php endif; ?>
 </main><!-- #main -->
 
 <?php
