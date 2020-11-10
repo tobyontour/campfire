@@ -5,6 +5,13 @@
 	margin-right: auto;
 }
 
+@mixin center-section {
+	@include center-block;
+	position: relative;
+	width: 100%;
+	max-width: $size__content;
+}
+
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );

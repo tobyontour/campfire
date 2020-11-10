@@ -739,6 +739,7 @@ textarea {
 .main-navigation {
 	position: absolute;
 	top: 0;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .main-navigation button.menu-toggle {
@@ -756,9 +757,9 @@ textarea {
 }
 
 .main-navigation .nav-menu {
-	right: 0;
-	position: absolute;
-	padding: 10px;
+	margin-left: auto;
+	margin-right: 0;
+	padding: 5px;
 }
 
 @media screen and (min-width: 600px) {
@@ -844,6 +845,7 @@ textarea {
 .front-page {
 	background-repeat: no-repeat;
 	background-size: contain;
+	margin-top: 130px;
 }
 
 #masthead {
@@ -867,7 +869,7 @@ textarea {
 	color: #fff;
 	text-decoration: none;
 	font-weight: bold;
-	font-size: 28px;
+	font-size: 24px;
 }
 
 .site-branding__title:visited {
@@ -895,6 +897,15 @@ textarea {
 	min-height: 200px;
 	padding: 10px;
 	margin-top: 50px;
+}
+
+.site-info {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
 }
 
 /* Comments

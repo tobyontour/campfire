@@ -24,6 +24,11 @@
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'campfire' ), 'campfire', '<a href="http://techtoby.com">Toby Bettridge</a>' );
 				?>
+			<span class="sep"> | </span>
+				<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme available here: %1$s', 'campfire' ), '<a href="https://github.com/tobyontour/campfire">Campfire theme</a>' );
+				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

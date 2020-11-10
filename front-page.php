@@ -17,6 +17,7 @@ get_header();
 <main id="primary" class="site-main front-page">
 
 	<ul class="join-boxes">
+    <?php //if ( is_page( 'beavers' ) ): ?>
 	  <li class="join-boxes__item join-boxes__item--beavers">
       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/beavers/">
         <div class="join-boxes__logo beavers-logo">Beavers</div>
@@ -25,7 +26,8 @@ get_header();
           <p>Make friends and try new activities</p>
         </div>
       </a>
-		</li>
+    </li>
+    <?php //endif; ?>
 		<li class="join-boxes__item join-boxes__item--cubs">
       <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/cubs/">
 			  <div class="join-boxes__logo cubs-logo">Cubs</div>

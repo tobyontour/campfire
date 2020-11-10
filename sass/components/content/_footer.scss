@@ -5,3 +5,7 @@
   padding: $gap;
   margin-top: $gap * 5;
 }
+
+.site-info {
+  @include center-section;
+}
