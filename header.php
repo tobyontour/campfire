@@ -22,12 +22,14 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<?php if ( is_front_page() ) : ?>
 <style>
 	.body__background-image {
 		background-image: url(<?php header_image(); ?>);
 	}
 	</style>
 <div class="body__background-image"></div>
+<?php endif; ?>
 <div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } ?>">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
 

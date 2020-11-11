@@ -761,7 +761,7 @@ textarea {
 
 @media (min-width: 768px) {
 	.main-navigation {
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: #00a794;
 	}
 }
 
@@ -842,10 +842,6 @@ textarea {
 
 body.admin-bar .main-navigation {
 	top: 30px;
-}
-
-body.admin-bar .main-navigation.scrolled {
-	top: 0;
 }
 
 /* Logos
@@ -953,6 +949,12 @@ body.admin-bar .main-navigation.scrolled {
 	background-color: #00a794;
 	padding: 0 2rem;
 	color: #fff;
+}
+
+@media (min-width: 768px) {
+	.site-header--front .main-navigation {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
 }
 
 .banner-sidebar .widget {

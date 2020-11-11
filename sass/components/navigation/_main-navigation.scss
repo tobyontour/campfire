@@ -6,7 +6,7 @@
   z-index: 10;
 
   @include tablet-plus {
-    background-color: $color__shaded-dark;
+    background-color: $color__scout-teal;
   }
 
   &.scrolled {
@@ -77,7 +77,4 @@
 
 body.admin-bar .main-navigation {
   top: 30px;
-  &.scrolled {
-    top: 0;
-  }
 }

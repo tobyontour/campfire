@@ -32,6 +32,12 @@
   }
 }
 
+.site-header--front .main-navigation {
+  @include tablet-plus {
+    background-color: $color__shaded-dark;
+  }
+}
+
 .banner-sidebar {
   .widget {
     padding: $gap;
