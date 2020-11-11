@@ -48,13 +48,19 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
+			<div class="site-branding--mobile">
+				<div class="site-branding__logo"></div>
+				<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			</div>
+
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<svg viewBox="0 0 100 80" width="40" height="40">
-					<rect width="100" height="20"></rect>
-					<rect y="30" width="100" height="20"></rect>
-					<rect y="60" width="100" height="20"></rect>
+				<svg viewBox="0 0 50 50" width="40" height="40">
+					<rect y="5"  width="50" height="5"></rect>
+					<rect y="20" width="50" height="5"></rect>
+					<rect y="35" width="50" height="5"></rect>
 				</svg>
 			</button>
+
 			<?php
 			wp_nav_menu(
 				array(

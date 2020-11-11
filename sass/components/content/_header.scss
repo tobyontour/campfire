@@ -24,6 +24,22 @@
   &__description {
     color: $color__text-inverted;
   }
+  &--mobile {
+    display: none;
+    margin: $gap / 2 0 $gap / 2 $gap / 2;
+    max-width: 200px;
+    .site-branding__logo {
+      background-image: $url__fleur-de-lis;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      float: left;
+    }
+    .site-branding__title {
+      font-size: medium;
+      margin-left: 50px;
+    }
+  }
 }
 
 .body__background-image {

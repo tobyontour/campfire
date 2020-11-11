@@ -14,5 +14,23 @@
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+	@if ( $numberColumns == $columns__total ) {
+		width: 100%;
+	}
+	@else {
+		width: ( ( ( $numberColumns * 100 ) ) / $columns__total ) - $columns__margin;
+	}
 }
+
+@mixin container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+// #primary {
+// 	outline: 1px dashed red;
+// }
+// .widget, article {
+// 	outline: 1px dashed purple;
+// }

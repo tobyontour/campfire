@@ -27,14 +27,14 @@
     }
   }
   &__item {
-    margin: $gap / 2;
+    margin: $gap / 4;
     display: inline-block;
     width: 150px;
     height: auto;
     color: $color__text-inverted;
     list-style: none;
     vertical-align: top;
-    padding: $gap * 1.5;
+    padding: $gap / 2;
     text-align: center;
 
     p {

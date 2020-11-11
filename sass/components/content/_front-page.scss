@@ -5,36 +5,40 @@
 
   .main-content {
     margin-top: $gap;
-    display: flex;
-    flex-wrap: wrap;
+    @include container;
     article {
-      width: 100%;
-      margin: 0 $gap;
+      @include column-width(12);
+      padding: 0 $gap;
     }
     &.has-sidebar {
       @include tablet-plus {
         article {
-          width: 60%;
-          margin: 0 $gap;
+          @include column-width(8);
         }
         aside {
-          padding: 0 $gap * 2;
-          width: 38%;
+          @include column-width(4);
           background-color: $color__scout-teal;
+          padding: 0 $gap;
           color: $color__text-inverted;
+          margin-top: $gap;
         }
       }
     }
-    @mixin desktop {
+    aside {
+      background-color: $color__scout-teal;
       padding: 0 $gap;
+      color: $color__text-inverted;
     }
   }
 }
 
 .banner-sidebar {
-  background-color: $color__scout-yellow;
-  @include center-section;
-  padding: $gap * 1.5;
+  .widget {
+    padding: $gap;
+    background-color: $color__scout-yellow;
+    @include center-section;
+    max-width: 40rem;
+  }
   .widget:last-child {
     margin-bottom: 0;
   }
@@ -47,19 +51,28 @@
 }
 
 .banner-sidebar + .front-page {
-  margin-top: $gap * 2;
+  margin-top: $gap;
 }
 
 .primary-sidebar {
-  display: flex;
-  flex-flow: row wrap;
+  @include container;
 
   /* Then we define how is distributed the remaining space */
   justify-content: space-between;
   .widget {
-    width: 45%;
-    // margin: $gap * 2;
+    @include column-width(12);
+    padding: 0 $gap;
+    @include tablet {
+      padding: 0;
+      @include column-width(6);
+    }
+    @include desktop {
+      padding: 0;
+      @include column-width(4);
+    }
   }
-
+  .twitter-timeline {
+    max-height: 600px;
+  }
 }
 

@@ -415,6 +415,18 @@ h6 {
 	clear: both;
 }
 
+h1 {
+	font-size: 2.75em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.17em;
+}
+
 p {
 	margin-bottom: 1.5em;
 }
@@ -704,7 +716,7 @@ textarea {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 768px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -740,18 +752,37 @@ textarea {
 
 .main-navigation {
 	position: fixed;
-	top: 30px;
+	top: 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 	z-index: 10;
-	background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.main-navigation {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
 }
 
 .main-navigation.scrolled {
 	background-color: #00a794;
 }
 
+.main-navigation.scrolled .site-branding--mobile {
+	display: block;
+}
+
 .main-navigation button.menu-toggle {
 	background-color: inherit;
 	border: none;
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.main-navigation button.menu-toggle svg rect {
+	stroke: #fff;
+	fill: #fff;
 }
 
 .main-navigation .menu-top-menu-container {
@@ -767,7 +798,7 @@ textarea {
 	margin-left: auto;
 	margin-right: 0;
 	float: right;
-	padding: 10px;
+	padding: 2rem;
 }
 
 .main-navigation .menu-item {
@@ -777,6 +808,29 @@ textarea {
 .main-navigation .menu-item a {
 	color: #fff;
 	font-weight: bold;
+}
+
+.main-navigation.toggled {
+	background-color: #00a794;
+}
+
+.main-navigation.toggled li {
+	text-align: right;
+	font-size: x-large;
+	padding: 0 2rem 0.5rem;
+	width: 100%;
+}
+
+.main-navigation.toggled .site-branding--mobile {
+	display: block;
+}
+
+body.admin-bar .main-navigation {
+	top: 30px;
+}
+
+body.admin-bar .main-navigation.scrolled {
+	top: 0;
 }
 
 /* Logos
@@ -856,30 +910,38 @@ textarea {
 }
 
 .front-page .main-content {
-	margin-top: 10px;
+	margin-top: 2rem;
 	display: flex;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
 
 .front-page .main-content article {
 	width: 100%;
-	margin: 0 10px;
+	padding: 0 2rem;
 }
 
 @media (min-width: 768px) {
 	.front-page .main-content.has-sidebar article {
-		width: 60%;
-		margin: 0 10px;
+		width: 64.76667%;
 	}
 	.front-page .main-content.has-sidebar aside {
-		padding: 0 20px;
-		width: 38%;
+		width: 31.43333%;
 		background-color: #00a794;
+		padding: 0 2rem;
 		color: #fff;
+		margin-top: 2rem;
 	}
 }
 
-.banner-sidebar {
+.front-page .main-content aside {
+	background-color: #00a794;
+	padding: 0 2rem;
+	color: #fff;
+}
+
+.banner-sidebar .widget {
+	padding: 2rem;
 	background-color: #ffe627;
 	display: block;
 	margin-left: auto;
@@ -887,7 +949,7 @@ textarea {
 	position: relative;
 	width: 100%;
 	max-width: 1200px;
-	padding: 15px;
+	max-width: 40rem;
 }
 
 .banner-sidebar .widget:last-child {
@@ -903,18 +965,38 @@ textarea {
 }
 
 .banner-sidebar + .front-page {
-	margin-top: 20px;
+	margin-top: 2rem;
 }
 
 .primary-sidebar {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: space-between;
 	/* Then we define how is distributed the remaining space */
 	justify-content: space-between;
 }
 
 .primary-sidebar .widget {
-	width: 45%;
+	width: 100%;
+	padding: 0 2rem;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	.primary-sidebar .widget {
+		padding: 0;
+		width: 48.1%;
+	}
+}
+
+@media (min-width: 1024px) {
+	.primary-sidebar .widget {
+		padding: 0;
+		width: 31.43333%;
+	}
+}
+
+.primary-sidebar .twitter-timeline {
+	max-height: 600px;
 }
 
 #masthead {
@@ -949,6 +1031,25 @@ textarea {
 	color: #fff;
 }
 
+.site-branding--mobile {
+	display: none;
+	margin: 1rem 0 1rem 1rem;
+	max-width: 200px;
+}
+
+.site-branding--mobile .site-branding__logo {
+	background-image: url(images/logos/fleur-de-lis-marque-white-png.png);
+	background-size: contain;
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.site-branding--mobile .site-branding__title {
+	font-size: medium;
+	margin-left: 50px;
+}
+
 .body__background-image {
 	position: absolute;
 	width: 100%;
@@ -965,8 +1066,8 @@ textarea {
 	background-color: #7413dc;
 	color: #fff;
 	min-height: 200px;
-	padding: 10px;
-	margin-top: 50px;
+	padding: 2rem;
+	margin-top: 10rem;
 }
 
 #colophon a {
@@ -997,7 +1098,6 @@ textarea {
 /* calendar widget */
 #wp-calendar {
 	width: 100%;
-	max-width: 40em;
 }
 
 #wp-calendar caption {
@@ -1259,14 +1359,14 @@ textarea {
 }
 
 .join-boxes__item {
-	margin: 5px;
+	margin: 0.5rem;
 	display: inline-block;
 	width: 150px;
 	height: auto;
 	color: #fff;
 	list-style: none;
 	vertical-align: top;
-	padding: 15px;
+	padding: 1rem;
 	text-align: center;
 }
 

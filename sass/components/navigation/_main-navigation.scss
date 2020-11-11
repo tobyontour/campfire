@@ -1,16 +1,31 @@
 .main-navigation {
   position: fixed;
-  top: 30px;
+  top: 0;
+  // top: 30px;
+  @include container;
   z-index: 10;
-  background-color: $color__shaded-dark;
+
+  @include tablet {
+    background-color: $color__shaded-dark;
+  }
 
   &.scrolled {
     background-color: $color__scout-teal;
+    .site-branding--mobile {
+      display: block;
+    }
   }
 
   button.menu-toggle {
     background-color: inherit;
     border: none;
+    margin-right: 0;
+    margin-left: auto;
+
+    svg rect {
+      stroke:$color__text-inverted;
+      fill: $color__text-inverted;
+    }
   }
 
 	.menu-top-menu-container {
@@ -30,5 +45,25 @@
       color: $color__text-inverted;
       font-weight: bold;
     }
+  }
+
+  &.toggled {
+    background-color: $color__scout-teal;
+    li {
+      text-align: right;
+      font-size: x-large;
+      padding: 0 $gap $gap / 4;
+      width: 100%;
+    }
+    .site-branding--mobile {
+      display: block;
+    }
+  }
+}
+
+body.admin-bar .main-navigation {
+  top: 30px;
+  &.scrolled {
+    top: 0;
   }
 }
