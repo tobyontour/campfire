@@ -5,7 +5,7 @@
   @include container;
   z-index: 10;
 
-  @include tablet {
+  @include tablet-plus {
     background-color: $color__shaded-dark;
   }
 
@@ -29,14 +29,22 @@
   }
 
 	.menu-top-menu-container {
-    @include center-section;
+    margin-right: 0;
+    margin-left: auto;
+    width: 100%;
+    @include tablet {
+      max-width: 90%;
+    }
+    @include desktop {
+      max-width: 75%;
+    }
   }
 
 	.nav-menu {
     margin-left: auto;
     margin-right: 0;
     float: right;
-		padding: $gap;
+		padding: $gap / 2;
   }
 
   .menu-item {
@@ -57,6 +65,12 @@
     }
     .site-branding--mobile {
       display: block;
+    }
+  }
+
+  .site-branding--mobile .site-branding__title {
+    @include tablet {
+      display: none;
     }
   }
 }
