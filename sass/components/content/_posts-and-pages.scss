@@ -52,24 +52,24 @@
 
 	&__content--has-aside {
 		@include container;
-		.share-links {
-			@include column-width(12);
-			padding: $gap 0;
-		}
+		// .share-links {
+		// 	@include column-width(12);
+		// 	padding: $gap 0;
+		// }
 		article {
 			@include column-width(12);
-			padding: $gap;
+			padding: $gap 0;
 		}
 		aside {
 			@include column-width(12);
 			padding: $gap 0;
 		}
 		@include tablet-plus {
-			.share-links {
-				@include column-width(2);
-			}
+			// .share-links {
+			// 	@include column-width(2);
+			// }
 			article {
-				@include column-width(6);
+				@include column-width(8);
 			}
 			aside {
 				@include column-width(4);

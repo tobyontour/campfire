@@ -950,14 +950,9 @@ body.admin-bar .main-navigation {
 	justify-content: space-between;
 }
 
-.page__content--has-aside .share-links {
-	width: 100%;
-	padding: 2rem 0;
-}
-
 .page__content--has-aside article {
 	width: 100%;
-	padding: 2rem;
+	padding: 2rem 0;
 }
 
 .page__content--has-aside aside {
@@ -966,11 +961,8 @@ body.admin-bar .main-navigation {
 }
 
 @media (min-width: 768px) {
-	.page__content--has-aside .share-links {
-		width: 14.76667%;
-	}
 	.page__content--has-aside article {
-		width: 48.1%;
+		width: 64.76667%;
 	}
 	.page__content--has-aside aside {
 		width: 31.43333%;

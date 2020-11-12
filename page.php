@@ -23,13 +23,13 @@ get_header();
 			</div>
 		</header>
 		<section class="page__content page__content--has-aside">
-			<div class="page__share">
+			<!-- <div class="page__share">
 				<ul class="share-links">
 					<li class="share-links__item"><a class="share-links__link" href="#">AA</a></li>
 					<li class="share-links__item"><a class="share-links__link" href="#">BB</a></li>
 					<li class="share-links__item"><a class="share-links__link" href="#">CC</a></li>
 				</ul>
-			</div>
+			</div> -->
 			<?php
 				while ( have_posts() ) :
 					the_post();
