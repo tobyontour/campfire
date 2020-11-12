@@ -494,7 +494,8 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1em 1em;
+	padding: 0;
 }
 
 ul {
@@ -508,7 +509,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 1em;
 }
 
 dt {
@@ -938,6 +939,11 @@ body.admin-bar .main-navigation {
 	max-width: 1200px;
 }
 
+.page__aside section {
+	background-color: lightgray;
+	padding: 2rem;
+}
+
 .page__content--has-aside {
 	display: flex;
 	flex-flow: row wrap;
@@ -1245,7 +1251,11 @@ body.admin-bar .main-navigation {
 }
 
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 2rem;
+}
+
+.widget .widget-title {
+	margin-top: 0;
 }
 
 .widget select {

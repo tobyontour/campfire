@@ -151,6 +151,16 @@ function campfire_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => 'Page sidebar',
+		'id'            => 'page-1',
+		'description'   => esc_html__( 'Widgets to display alongside pages.', 'campfire' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 add_action( 'widgets_init', 'campfire_widgets_init' );
 

@@ -43,6 +43,11 @@
 
 	&__aside {
 		// background-color: lightcoral;
+		// background-color: $color__background-title;
+		section {
+			background-color: lightgray;
+			padding: $gap;
+		}
 	}
 
 	&__content--has-aside {

@@ -49,6 +49,11 @@ get_header();
 				<p>Sed vitae iaculis quam. Integer finibus arcu sed est vulputate, sit amet gravida leo ornare. Donec fringilla et nisi non bibendum. Donec finibus scelerisque justo, non aliquam neque luctus at. Nam convallis dapibus diam eu fermentum. Donec id feugiat nulla, tristique commodo felis. Quisque bibendum sapien vel nisl ullamcorper, vel pharetra libero tristique. Sed porttitor viverra ligula, ut sodales enim. Nullam auctor dolor ut fringilla porta.</p> -->
 
 			<aside class="page__aside">
+				<?php if ( is_active_sidebar( 'page-1' ) ) : ?>
+					<div class="page__widgets widget-area">
+						<?php dynamic_sidebar( 'page-1' ); ?>
+					</div>
+				<?php endif; ?>
 				<div class="related-links">
 					<ul class="related-links__posts">
 						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
