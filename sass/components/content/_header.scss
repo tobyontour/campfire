@@ -26,7 +26,7 @@
   }
   &--mobile {
     display: none;
-    margin: $gap / 2 0 $gap / 2 $gap / 2;
+    margin: $gap / 4;
     max-width: 200px;
     .site-branding__logo {
       background-image: $url__fleur-de-lis;

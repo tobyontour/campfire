@@ -1,0 +1,15 @@
+.breadcrumbs {
+  margin-top: $size__nav;
+  a {
+    text-decoration: none;
+    &:visited {
+      color: $color__text-breadcrumb;
+    }
+  }
+  font-weight: bold;
+}
+
+.breadcrumbs__wrapper {
+  @include center-section;
+  padding: $gap / 2 $gap;
+}

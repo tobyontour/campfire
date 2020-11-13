@@ -754,6 +754,7 @@ textarea {
 .main-navigation {
 	position: fixed;
 	top: 0;
+	height: 3.5rem;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
@@ -845,6 +846,29 @@ body.admin-bar .main-navigation {
 	top: 30px;
 }
 
+.breadcrumbs {
+	margin-top: 3.5rem;
+	font-weight: bold;
+}
+
+.breadcrumbs a {
+	text-decoration: none;
+}
+
+.breadcrumbs a:visited {
+	color: #23a950;
+}
+
+.breadcrumbs__wrapper {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	padding: 1rem 2rem;
+}
+
 /* Logos
 --------------------------------------------- */
 .beavers-logo, .cubs-logo, .scouts-logo, .explorers-logo, .network-logo, .volunteers-logo {
@@ -897,7 +921,7 @@ body.admin-bar .main-navigation {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -916,8 +940,7 @@ body.admin-bar .main-navigation {
 }
 
 .page__header {
-	background-color: #00a79498;
-	padding: 2rem;
+	background-color: #7413dc99;
 	color: #fff;
 }
 
@@ -928,6 +951,7 @@ body.admin-bar .main-navigation {
 	position: relative;
 	width: 100%;
 	max-width: 1200px;
+	padding: 2rem;
 }
 
 .page__content {
@@ -939,9 +963,18 @@ body.admin-bar .main-navigation {
 	max-width: 1200px;
 }
 
-.page__aside section {
-	background-color: lightgray;
+.page__content article {
 	padding: 2rem;
+}
+
+.page__aside section {
+	background-color: #7413dc;
+	color: #fff;
+	padding: 2rem;
+}
+
+.page__aside section a {
+	color: #fff;
 }
 
 .page__content--has-aside {
@@ -952,7 +985,6 @@ body.admin-bar .main-navigation {
 
 .page__content--has-aside article {
 	width: 100%;
-	padding: 2rem 0;
 }
 
 .page__content--has-aside aside {
@@ -970,7 +1002,7 @@ body.admin-bar .main-navigation {
 }
 
 .page__sidebar {
-	background-color: #00a79498;
+	background-color: #7413dc99;
 }
 
 .page__sidebar #secondary {
@@ -983,20 +1015,24 @@ body.admin-bar .main-navigation {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	padding: 2rem;
 }
 
 .page__sidebar #secondary section {
+	padding: 2rem;
+	background-color: #fff;
 	width: 100%;
 }
 
 @media (min-width: 768px) {
 	.page__sidebar #secondary section {
-		width: 31.43333%;
+		width: auto;
+		max-width: 50%;
 	}
 }
 
 #masthead {
-	height: 22px;
+	min-height: 22px;
 }
 
 .front-page {
@@ -1135,7 +1171,7 @@ body.admin-bar .main-navigation {
 
 .site-branding--mobile {
 	display: none;
-	margin: 1rem 0 1rem 1rem;
+	margin: 0.5rem;
 	max-width: 200px;
 }
 
@@ -1169,7 +1205,6 @@ body.admin-bar .main-navigation {
 	color: #fff;
 	min-height: 200px;
 	padding: 2rem;
-	margin-top: 10rem;
 }
 
 #colophon a {

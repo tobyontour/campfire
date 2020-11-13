@@ -4,7 +4,7 @@
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -25,12 +25,12 @@
 .page {
 	&__header {
 		background-color: $color__background-title;
-		padding: $gap;
 		color: $color__text-inverted;
 	}
 
 	&__header-wrapper {
 		@include center-section;
+		padding: $gap;
 	}
 
 	&__content {
@@ -38,6 +38,7 @@
 		@include center-section;
 		article {
 			// background-color: mediumaquamarine;
+			padding: $gap;
 		}
 	}
 
@@ -45,7 +46,12 @@
 		// background-color: lightcoral;
 		// background-color: $color__background-title;
 		section {
-			background-color: lightgray;
+			background-color: $color__scout-purple;
+			color: $color__text-inverted;
+			a {
+				color: $color__text-inverted;
+			}
+
 			padding: $gap;
 		}
 	}
@@ -58,7 +64,6 @@
 		// }
 		article {
 			@include column-width(12);
-			padding: $gap 0;
 		}
 		aside {
 			@include column-width(12);
@@ -81,11 +86,16 @@
 		background-color: $color__background-title;
 	  #secondary {
 			@include center-section;
-		  @include container;
+			@include container;
+			padding: $gap;
 			section {
+				padding: $gap;
+				background-color: $color__background-body;
 				@include column-width(12);
 				@include tablet-plus {
-					@include column-width(4);
+					width: auto;
+					max-width: 50%;
+					// @include column-width(4);
 				}
 			}
 		}
@@ -93,5 +103,5 @@
 }
 
 #masthead {
-	height: 22px;
+	min-height: 22px;
 }

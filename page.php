@@ -54,13 +54,13 @@ get_header();
 						<?php dynamic_sidebar( 'page-1' ); ?>
 					</div>
 				<?php endif; ?>
-				<div class="related-links">
+				<section class="related-links">
 					<ul class="related-links__posts">
 						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
 						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
 						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
 					</ul>
-				</div>
+				</section>
 			</aside>
 		</section>
 		<section class="page__sidebar">

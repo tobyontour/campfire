@@ -1,6 +1,7 @@
 .main-navigation {
   position: fixed;
   top: 0;
+  height: $size__nav;
   // top: 30px;
   @include container;
   z-index: 10;

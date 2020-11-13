@@ -76,4 +76,13 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+			<div class="breadcrumbs__wrapper">
+				<?php
+				if(function_exists('bcn_display'))
+				{
+				bcn_display();
+				}?>
+			</div>
+		</nav>
 	</header><!-- #masthead -->
