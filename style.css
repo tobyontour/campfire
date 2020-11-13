@@ -941,7 +941,12 @@ body.admin-bar .main-navigation {
 
 .page__header {
 	background-color: #7413dc99;
+	background-color: #7413dc;
 	color: #fff;
+}
+
+.page__title {
+	margin: 0;
 }
 
 .page__header-wrapper {

@@ -25,7 +25,12 @@
 .page {
 	&__header {
 		background-color: $color__background-title;
+		background-color: $color__scout-purple;
 		color: $color__text-inverted;
+	}
+
+	&__title {
+		margin: 0;
 	}
 
 	&__header-wrapper {
