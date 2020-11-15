@@ -22,7 +22,7 @@
 	margin: 0 0 1.5em;
 }
 
-.page {
+.page, .post {
 	&__header {
 		background-color: $color__background-title;
 		background-color: $color__scout-purple;
@@ -51,7 +51,7 @@
 		// background-color: lightcoral;
 		// background-color: $color__background-title;
 		section {
-			background-color: $color__scout-purple;
+			background-color: $color__scout-teal;
 			color: $color__text-inverted;
 			a {
 				color: $color__text-inverted;

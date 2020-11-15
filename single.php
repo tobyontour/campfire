@@ -8,10 +8,26 @@
  */
 
 get_header();
+
+if ( has_post_thumbnail() ) {
+	$featured_image = get_the_post_thumbnail();
+}
 ?>
-
-	<main id="primary" class="site-main">
-
+	<main class="post">
+		<header class="post__header">
+			<div class="post__header-wrapper">
+				<h1 class="post__title"><?php echo get_the_title(); ?></h1>
+				<!--<div class="post__subtitle"></div>-->
+			</div>
+		</header>
+		<section class="post__content post__content--has-aside">
+			<!-- <div class="post__share">
+				<ul class="share-links">
+					<li class="share-links__item"><a class="share-links__link" href="#">AA</a></li>
+					<li class="share-links__item"><a class="share-links__link" href="#">BB</a></li>
+					<li class="share-links__item"><a class="share-links__link" href="#">CC</a></li>
+				</ul>
+			</div> -->
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -32,7 +48,24 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
+			<aside class="post__aside">
+				<?php if ( is_active_sidebar( 'page-1' ) ) : ?>
+					<div class="post__widgets widget-area">
+						<?php dynamic_sidebar( 'page-1' ); ?>
+					</div>
+				<?php endif; ?>
+				<!-- <section class="related-links">
+					<ul class="related-links__posts">
+						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
+						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
+						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
+					</ul>
+				</section> -->
+			</aside>
+		</section>
+		<section class="post__sidebar">
+			<?php get_sidebar(); ?>
+		</section>
 	</main><!-- #main -->
 
 <?php

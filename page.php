@@ -19,7 +19,7 @@ get_header();
 		<header class="page__header">
 			<div class="page__header-wrapper">
 				<h1 class="page__title"><?php echo get_the_title(); ?></h1>
-				<div class="page__subtitle">Scouts is where young people make new friends, have amazing adventures, and learn new skills.</div>
+				<!--<div class="page__subtitle"></div>-->
 			</div>
 		</header>
 		<section class="page__content page__content--has-aside">
@@ -43,24 +43,19 @@ get_header();
 
 				endwhile; // End of the loop.
 				?>
-				<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies nunc et sem vehicula facilisis. Phasellus finibus pulvinar condimentum. Nullam dictum ex vel eros vulputate, id tincidunt lacus interdum. Aliquam luctus consequat hendrerit. Etiam feugiat quam eget turpis malesuada sagittis. Donec vitae nulla nec risus euismod dignissim. Aliquam condimentum ultricies nisi.</p>
-				<p>Nullam sed auctor lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat euismod magna non mollis. Proin egestas sem nec consectetur volutpat. Vestibulum dictum dictum lectus, vitae sollicitudin sem tristique id. Integer vel mi ut lacus sagittis laoreet. Donec sagittis egestas pellentesque.</p>
-				<p>Sed rhoncus ac sapien eget faucibus. Etiam vehicula felis quis elit aliquam, scelerisque condimentum risus semper. Integer cursus elementum sapien eget iaculis. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent iaculis, lectus id convallis venenatis, nisl libero tempus purus, sit amet finibus erat justo a diam. In ultrices, arcu vitae mollis tincidunt, odio ante rhoncus tellus, a gravida tortor ante vitae purus.</p>
-				<p>Sed vitae iaculis quam. Integer finibus arcu sed est vulputate, sit amet gravida leo ornare. Donec fringilla et nisi non bibendum. Donec finibus scelerisque justo, non aliquam neque luctus at. Nam convallis dapibus diam eu fermentum. Donec id feugiat nulla, tristique commodo felis. Quisque bibendum sapien vel nisl ullamcorper, vel pharetra libero tristique. Sed porttitor viverra ligula, ut sodales enim. Nullam auctor dolor ut fringilla porta.</p> -->
-
 			<aside class="page__aside">
 				<?php if ( is_active_sidebar( 'page-1' ) ) : ?>
 					<div class="page__widgets widget-area">
 						<?php dynamic_sidebar( 'page-1' ); ?>
 					</div>
 				<?php endif; ?>
-				<section class="related-links">
+				<!-- <section class="related-links">
 					<ul class="related-links__posts">
 						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
 						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
 						<li class="related-links__post"><a class="related-links__link" href="#">Related title</a></li>
 					</ul>
-				</section>
+				</section> -->
 			</aside>
 		</section>
 		<section class="page__sidebar">

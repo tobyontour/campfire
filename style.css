@@ -939,17 +939,17 @@ body.admin-bar .main-navigation {
 	margin: 0 0 1.5em;
 }
 
-.page__header {
+.page__header, .post__header {
 	background-color: #7413dc99;
 	background-color: #7413dc;
 	color: #fff;
 }
 
-.page__title {
+.page__title, .post__title {
 	margin: 0;
 }
 
-.page__header-wrapper {
+.page__header-wrapper, .post__header-wrapper {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -959,7 +959,7 @@ body.admin-bar .main-navigation {
 	padding: 2rem;
 }
 
-.page__content {
+.page__content, .post__content {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -968,49 +968,49 @@ body.admin-bar .main-navigation {
 	max-width: 1200px;
 }
 
-.page__content article {
+.page__content article, .post__content article {
 	padding: 2rem;
 }
 
-.page__aside section {
-	background-color: #7413dc;
+.page__aside section, .post__aside section {
+	background-color: #00a794;
 	color: #fff;
 	padding: 2rem;
 }
 
-.page__aside section a {
+.page__aside section a, .post__aside section a {
 	color: #fff;
 }
 
-.page__content--has-aside {
+.page__content--has-aside, .post__content--has-aside {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
 }
 
-.page__content--has-aside article {
+.page__content--has-aside article, .post__content--has-aside article {
 	width: 100%;
 }
 
-.page__content--has-aside aside {
+.page__content--has-aside aside, .post__content--has-aside aside {
 	width: 100%;
 	padding: 2rem 0;
 }
 
 @media (min-width: 768px) {
-	.page__content--has-aside article {
+	.page__content--has-aside article, .post__content--has-aside article {
 		width: 64.76667%;
 	}
-	.page__content--has-aside aside {
+	.page__content--has-aside aside, .post__content--has-aside aside {
 		width: 31.43333%;
 	}
 }
 
-.page__sidebar {
+.page__sidebar, .post__sidebar {
 	background-color: #7413dc99;
 }
 
-.page__sidebar #secondary {
+.page__sidebar #secondary, .post__sidebar #secondary {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -1023,14 +1023,14 @@ body.admin-bar .main-navigation {
 	padding: 2rem;
 }
 
-.page__sidebar #secondary section {
+.page__sidebar #secondary section, .post__sidebar #secondary section {
 	padding: 2rem;
 	background-color: #fff;
 	width: 100%;
 }
 
 @media (min-width: 768px) {
-	.page__sidebar #secondary section {
+	.page__sidebar #secondary section, .post__sidebar #secondary section {
 		width: auto;
 		max-width: 50%;
 	}
@@ -1081,6 +1081,10 @@ body.admin-bar .main-navigation {
 	.site-header--front .main-navigation {
 		background-color: rgba(0, 0, 0, 0.1);
 	}
+}
+
+.banner-sidebar {
+	margin-top: 9rem;
 }
 
 .banner-sidebar .widget {
