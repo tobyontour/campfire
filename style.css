@@ -957,6 +957,7 @@ body.admin-bar .main-navigation {
 	width: 100%;
 	max-width: 1200px;
 	padding: 2rem;
+	z-index: 2;
 }
 
 .page__content, .post__content {
@@ -1034,6 +1035,17 @@ body.admin-bar .main-navigation {
 		width: auto;
 		max-width: 50%;
 	}
+}
+
+.page__hero, .post__hero {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+}
+
+.page__hero img, .post__hero img {
+	width: 100%;
 }
 
 #masthead {
