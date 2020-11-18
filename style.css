@@ -763,7 +763,7 @@ textarea {
 
 @media (min-width: 768px) {
 	.main-navigation {
-		background-color: #00a794;
+		background-color: rgba(0, 0, 0, 0.1);
 	}
 }
 
@@ -939,6 +939,12 @@ body.admin-bar .main-navigation {
 	margin: 0 0 1.5em;
 }
 
+.page, .post {
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top: 130px;
+}
+
 .page__header, .post__header {
 	background-color: #7413dc99;
 	background-color: #7413dc;
@@ -1087,12 +1093,6 @@ body.admin-bar .main-navigation {
 	background-color: #00a794;
 	padding: 0 2rem;
 	color: #fff;
-}
-
-@media (min-width: 768px) {
-	.site-header--front .main-navigation {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
 }
 
 .banner-sidebar {

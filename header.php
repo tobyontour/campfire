@@ -24,13 +24,13 @@
 <?php wp_body_open(); ?>
 
 <?php if ( is_front_page() ) : ?>
-<style>
+  <style>
 	.body__background-image {
 		background-image: url(<?php header_image(); ?>);
 	}
 	</style>
-<div class="body__background-image"></div>
 <?php endif; ?>
+<div class="body__background-image"></div>
 
 <div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } ?>">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
@@ -76,11 +76,12 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+		<h1 class="site-header__title"><?php echo get_the_title(); ?></h1>
 		<?php if ( function_exists('bcn_display') ) : ?>
 		<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
 			<div class="breadcrumbs__wrapper">
 				<?php
-				bcn_display();
+				// bcn_display();
 				?>
 			</div>
 		</nav>

@@ -10,15 +10,18 @@
 get_header();
 
 ?>
+	<style>
+	.body__background-image {
+		background-image: url(<?php echo get_the_post_thumbnail_url( null, 'hero' ); ?>);
+	}
+	</style>
 	<main class="post">
 		<header class="post__header">
 			<div class="post__header-wrapper">
 				<h1 class="post__title"><?php echo get_the_title(); ?></h1>
 				<!--<div class="post__subtitle"></div>-->
 			</div>
-			<div class="post__hero">
-				<?php the_post_thumbnail( 'hero' ); ?>
-			</div>
+
 		</header>
 		<section class="post__content post__content--has-aside">
 			<!-- <div class="post__share">
