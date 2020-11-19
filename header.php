@@ -30,9 +30,10 @@
 	}
 	</style>
 <?php endif; ?>
-<div class="body__background-image"></div>
+
 
 <div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } ?>">
+	<div class="body__background-image"></div>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
 
 	<header id="masthead" class="site-header <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
@@ -76,14 +77,17 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		<h1 class="site-header__title"><?php echo get_the_title(); ?></h1>
-		<?php if ( function_exists('bcn_display') ) : ?>
-		<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-			<div class="breadcrumbs__wrapper">
-				<?php
-				// bcn_display();
-				?>
-			</div>
-		</nav>
+
+		<?php if ( !is_front_page() ) : ?>
+			<h1 class="site-header__title"><?php echo get_the_title(); ?></h1>
+			<?php if ( function_exists('bcn_display') ) : ?>
+			<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+				<div class="breadcrumbs__wrapper">
+					<?php
+					// bcn_display();
+					?>
+				</div>
+			</nav>
+			<?php endif; ?>
 		<?php endif; ?>
 	</header><!-- #masthead -->
