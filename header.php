@@ -32,27 +32,25 @@
 <?php endif; ?>
 
 
-<div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } ?>">
-	<div class="body__background-image"></div>
+<div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } else { echo 'site--inside'; } ?>">
+	<div class="body__background-image <?php if ( is_front_page() ) { echo 'body__background-image--front'; } ?>"></div>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
 
 	<header id="masthead" class="site-header <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
-		<?php if ( is_front_page() ) : ?>
-			<div class="site-branding">
-				<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
+		<div class="site-branding">
+			<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
 				<?php the_custom_logo(); ?>
-				</div>
+			</div>
 
-				<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 
-				<?php
+			<?php
 				$campfire_description = get_bloginfo( 'description', 'display' );
 				if ( $campfire_description || is_customize_preview() ) :
-					?>
-					<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-				<?php endif; ?>
-			</div><!-- .site-branding -->
-		<?php endif; ?>
+			?>
+				<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
 			<div class="site-branding--mobile">
@@ -78,16 +76,20 @@
 			?>
 		</nav><!-- #site-navigation -->
 
-		<?php if ( !is_front_page() ) : ?>
-			<h1 class="site-header__title"><?php echo get_the_title(); ?></h1>
+
+	</header><!-- #masthead -->
+
+	<?php if ( !is_front_page() ) : ?>
+		<div class="site-sub-header">
 			<?php if ( function_exists('bcn_display') ) : ?>
 			<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
 				<div class="breadcrumbs__wrapper">
 					<?php
-					// bcn_display();
+					bcn_display();
 					?>
 				</div>
 			</nav>
 			<?php endif; ?>
-		<?php endif; ?>
-	</header><!-- #masthead -->
+			<h1 class="site-sub-header__page-title"><?php echo get_the_title(); ?></h1>
+		</div>
+	<?php endif; ?>

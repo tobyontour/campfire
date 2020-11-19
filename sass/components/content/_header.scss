@@ -44,11 +44,21 @@
   }
 }
 
+.site-sub-header {
+  margin-top: 13rem;
+  &__page-title {
+    margin: 0 $gap;
+  }
+}
+
 .body__background-image {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 390px;
+  height: 260px;
+  &--front {
+    height: 390px;
+  }
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;

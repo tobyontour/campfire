@@ -1203,16 +1203,28 @@ body.admin-bar .main-navigation {
 	margin-left: 50px;
 }
 
+.site-sub-header {
+	margin-top: 13rem;
+}
+
+.site-sub-header__page-title {
+	margin: 0 2rem;
+}
+
 .body__background-image {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	height: 390px;
+	height: 260px;
 	z-index: -1;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-y: center;
 	background-position-x: center;
+}
+
+.body__background-image--front {
+	height: 390px;
 }
 
 #colophon {
