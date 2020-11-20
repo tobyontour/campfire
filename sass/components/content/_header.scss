@@ -46,9 +46,11 @@
 
 .site-sub-header {
   margin-top: 13rem;
-  &__page-title {
-    margin: 0 $gap;
-  }
+  // &__page-title {
+  //   padding: 0 $gap;
+  //   margin: 0;
+  //   @include center-section;
+  // }
 }
 
 .body__background-image {

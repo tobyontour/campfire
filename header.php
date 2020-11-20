@@ -90,6 +90,5 @@
 				</div>
 			</nav>
 			<?php endif; ?>
-			<h1 class="site-sub-header__page-title"><?php echo get_the_title(); ?></h1>
 		</div>
 	<?php endif; ?>
