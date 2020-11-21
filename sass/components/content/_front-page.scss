@@ -1,7 +1,5 @@
 .front-page {
-  // background-repeat: no-repeat;
-  // background-size: contain;
-  margin-top: 130px;
+  margin-top: 21rem;
 
   .main-content {
     margin-top: $gap;
@@ -20,7 +18,6 @@
           background-color: $color__scout-teal;
           padding: $gap;
           color: $color__text-inverted;
-          margin-top: $gap;
         }
       }
     }
@@ -28,23 +25,39 @@
       background-color: $color__scout-teal;
       padding: 0 $gap;
       color: $color__text-inverted;
+      a, a:hover, a:visited {
+        color: $color__text-inverted;
+      }
     }
   }
 }
 
-// .site-header--front .main-navigation {
-//   @include tablet-plus {
-//     background-color: $color__shaded-dark;
-//   }
-// }
-
 .banner-sidebar {
-  margin-top: 6rem;
+  padding-top: 14rem;
+  margin: 0 $gap;
+  @include desktop {
+    margin: 0;
+    margin: 7rem $gap 0;
+    margin: 0;
+    height: 14rem;
+    padding-top: 5rem;
+  }
+
+  & + .front-page {
+    @include desktop {
+      margin-top: 7rem;
+    }
+    margin-top: 1rem;
+  }
+
+
   .widget {
     padding: $gap;
     background-color: $color__scout-yellow;
     @include center-section;
-    max-width: 40rem;
+    @include desktop {
+      max-width: 30rem;
+    }
   }
   .widget:last-child {
     margin-bottom: 0;
@@ -57,9 +70,6 @@
   }
 }
 
-.banner-sidebar + .front-page {
-  margin-top: $gap;
-}
 
 .primary-sidebar {
   @include container;
@@ -83,4 +93,3 @@
     max-height: 600px;
   }
 }
-

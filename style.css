@@ -545,6 +545,8 @@ table {
 --------------------------------------------- */
 a {
 	color: #7413dc;
+	text-decoration-style: dashed;
+	text-underline-position: under;
 }
 
 a:visited {
@@ -570,9 +572,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	border-color: #7413dc;
 	border-radius: 3px;
-	background: #e6e6e6;
+	background: #fff;
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
@@ -582,7 +584,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	border-color: #7413dc;
 }
 
 button:active, button:focus,
@@ -592,7 +594,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	border-color: #7413dc;
 }
 
 input[type="text"],
@@ -1074,10 +1076,6 @@ body.admin-bar .main-navigation {
 	}
 }
 
-#masthead {
-	min-height: 22px;
-}
-
 body.section-beavers .site-branding__logo {
 	background-image: url(images/logos/beavers-logo.png);
 }
@@ -1159,7 +1157,7 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 }
 
 .front-page {
-	margin-top: 130px;
+	margin-top: 21rem;
 }
 
 .front-page .main-content {
@@ -1183,7 +1181,6 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 		background-color: #00a794;
 		padding: 2rem;
 		color: #fff;
-		margin-top: 2rem;
 	}
 }
 
@@ -1193,8 +1190,33 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 	color: #fff;
 }
 
+.front-page .main-content aside a, .front-page .main-content aside a:hover, .front-page .main-content aside a:visited {
+	color: #fff;
+}
+
 .banner-sidebar {
-	margin-top: 6rem;
+	padding-top: 14rem;
+	margin: 0 2rem;
+}
+
+@media (min-width: 1024px) {
+	.banner-sidebar {
+		margin: 0;
+		margin: 7rem 2rem 0;
+		margin: 0;
+		height: 14rem;
+		padding-top: 5rem;
+	}
+}
+
+.banner-sidebar + .front-page {
+	margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+	.banner-sidebar + .front-page {
+		margin-top: 7rem;
+	}
 }
 
 .banner-sidebar .widget {
@@ -1206,7 +1228,12 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 	position: relative;
 	width: 100%;
 	max-width: 1200px;
-	max-width: 40rem;
+}
+
+@media (min-width: 1024px) {
+	.banner-sidebar .widget {
+		max-width: 30rem;
+	}
 }
 
 .banner-sidebar .widget:last-child {
@@ -1219,10 +1246,6 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 
 .banner-sidebar .textwidget p:last-child {
 	margin-bottom: 0;
-}
-
-.banner-sidebar + .front-page {
-	margin-top: 2rem;
 }
 
 .primary-sidebar {
@@ -1255,10 +1278,6 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 
 .primary-sidebar .twitter-timeline {
 	max-height: 600px;
-}
-
-#masthead {
-	position: relative;
 }
 
 .site-branding {
@@ -1314,7 +1333,7 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 }
 
 .site-sub-header {
-	margin-top: 13rem;
+	margin-top: 16rem;
 }
 
 .body__background-image {
@@ -1373,7 +1392,6 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 
 #wp-calendar caption {
 	text-align: right;
-	color: #333;
 	margin-top: 10px;
 	margin-bottom: 15px;
 }

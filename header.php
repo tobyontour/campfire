@@ -23,13 +23,11 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php //if ( is_front_page() ) : ?>
-  <style>
+<style>
 	.body__background-image {
 		background-image: url(<?php header_image(); ?>);
 	}
-	</style>
-<?php// endif; ?>
+</style>
 
 
 <div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } else { echo 'site--inside'; } ?>">
