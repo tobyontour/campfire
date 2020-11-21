@@ -1052,6 +1052,22 @@ body.admin-bar .main-navigation {
 	min-height: 22px;
 }
 
+body.section-beavers .site-branding__logo {
+	background-image: url(images/logos/beavers-logo.png);
+}
+
+body.section-beavers .main-navigation.scrolled {
+	background-color: #006ddf;
+}
+
+body.section-beavers .page__header, body.section-beavers .post__header {
+	background-color: #006ddf;
+}
+
+body.section-beavers .page__aside section, body.section-beavers .post__aside section {
+	background-color: #006ddf;
+}
+
 .front-page {
 	margin-top: 130px;
 }
@@ -1165,6 +1181,7 @@ body.admin-bar .main-navigation {
 .site-branding__logo {
 	background-image: url(images/logos/logo-linear-trimmed.png);
 	background-repeat: no-repeat;
+	background-size: contain;
 	width: 261px;
 	height: 74px;
 }

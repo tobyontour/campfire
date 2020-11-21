@@ -125,3 +125,22 @@
 #masthead {
 	min-height: 22px;
 }
+
+body.section-beavers {
+	.site-branding__logo {
+		background-image: $url__beavers-logo;
+	}
+	.main-navigation.scrolled {
+		background-color: $color__beavers;
+	}
+	.page, .post {
+		&__header {
+			background-color: $color__beavers;
+		}
+		&__aside {
+			section {
+				background-color: $color__beavers;
+			}
+		}
+	}
+}

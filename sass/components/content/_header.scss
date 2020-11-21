@@ -11,6 +11,7 @@
   &__logo {
     background-image: $url__org-logo;
     background-repeat: no-repeat;
+    background-size: contain;
     width: 261px;
     height: 74px;
   }
