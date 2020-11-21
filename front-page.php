@@ -81,7 +81,7 @@ get_header();
 		</li>
   </ul>
 
-  <div class="main-content">
+  <div class="main-content has-sidebar">
   <?php
 		while ( have_posts() ) :
 			the_post();

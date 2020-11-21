@@ -1,15 +1,15 @@
 ul,
 ol {
-	margin: 0 0 1em 1em;
+	margin: 0;
 	padding: 0;
 }
 
 ul {
-	list-style: disc;
+	list-style: inside square;
 }
 
 ol {
-	list-style: decimal;
+	list-style: inside decimal;
 }
 
 li > ul,

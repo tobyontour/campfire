@@ -211,6 +211,10 @@ add_image_size( 'hero', 1200, 400, true );
 
 add_filter( 'body_class', function ( $classes ) {
 
+	if (($key = array_search('page', $classes)) !== false) {
+    unset($classes[$key]);
+	}
+
 	$sections = [
 		'beavers',
 		'cubs',

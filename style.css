@@ -494,16 +494,16 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1em 1em;
+	margin: 0;
 	padding: 0;
 }
 
 ul {
-	list-style: disc;
+	list-style: inside square;
 }
 
 ol {
-	list-style: decimal;
+	list-style: inside decimal;
 }
 
 li > ul,
@@ -768,7 +768,7 @@ textarea {
 }
 
 .main-navigation.scrolled {
-	background-color: #00a794;
+	background-color: #7413dc;
 }
 
 .main-navigation.scrolled .site-branding--mobile {
@@ -931,7 +931,13 @@ body.admin-bar .main-navigation {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0;
+}
+
+.page-content p:first-child,
+.entry-content p:first-child,
+.entry-summary p:first-child {
+	margin-top: 0;
 }
 
 .page-links {
@@ -943,6 +949,21 @@ body.admin-bar .main-navigation {
 	background-color: #7413dc99;
 	background-color: #7413dc;
 	color: #fff;
+}
+
+.page .entry-header, .post .entry-header {
+	display: none;
+	text-align: right;
+	font-size: small;
+}
+
+.page .entry-header .byline, .post .entry-header .byline {
+	display: none;
+}
+
+.page .entry-footer span, .post .entry-footer span {
+	margin-right: 2em;
+	font-size: small;
 }
 
 .page__title, .post__title {
@@ -977,10 +998,16 @@ body.admin-bar .main-navigation {
 	background-color: #00a794;
 	color: #fff;
 	padding: 2rem;
+	margin-bottom: 2rem;
 }
 
 .page__aside section a, .post__aside section a {
 	color: #fff;
+}
+
+.page__aside section h2, .post__aside section h2 {
+	margin-top: 0;
+	font-size: large;
 }
 
 .page__content--has-aside, .post__content--has-aside {
@@ -1011,7 +1038,18 @@ body.admin-bar .main-navigation {
 	background-color: #7413dc99;
 }
 
-.page__sidebar #secondary, .post__sidebar #secondary {
+.page__hero, .post__hero {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+}
+
+.page__hero img, .post__hero img {
+	width: 100%;
+}
+
+.page #secondary, .post #secondary {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -1024,28 +1062,16 @@ body.admin-bar .main-navigation {
 	padding: 2rem;
 }
 
-.page__sidebar #secondary section, .post__sidebar #secondary section {
+.page #secondary section, .post #secondary section {
 	padding: 2rem;
 	background-color: #fff;
 	width: 100%;
 }
 
 @media (min-width: 768px) {
-	.page__sidebar #secondary section, .post__sidebar #secondary section {
-		width: auto;
-		max-width: 50%;
+	.page #secondary section, .post #secondary section {
+		width: 48.1%;
 	}
-}
-
-.page__hero, .post__hero {
-	position: absolute;
-	top: 0;
-	z-index: 1;
-	width: 100%;
-}
-
-.page__hero img, .post__hero img {
-	width: 100%;
 }
 
 #masthead {
@@ -1060,12 +1086,76 @@ body.section-beavers .main-navigation.scrolled {
 	background-color: #006ddf;
 }
 
-body.section-beavers .page__header, body.section-beavers .post__header {
+body.section-beavers .page__header, body.section-beavers .page__sidebar, body.section-beavers .post__header, body.section-beavers .post__sidebar {
 	background-color: #006ddf;
 }
 
 body.section-beavers .page__aside section, body.section-beavers .post__aside section {
 	background-color: #006ddf;
+}
+
+body.section-cubs .site-branding__logo {
+	background-image: url(images/logos/cubs-logo.png);
+}
+
+body.section-cubs .main-navigation.scrolled {
+	background-color: #23a950;
+}
+
+body.section-cubs .page__header, body.section-cubs .page__sidebar, body.section-cubs .post__header, body.section-cubs .post__sidebar {
+	background-color: #23a950;
+}
+
+body.section-cubs .page__aside section, body.section-cubs .post__aside section {
+	background-color: #23a950;
+}
+
+body.section-scouts .site-branding__logo {
+	background-image: url(images/logos/scouts-logo.png);
+}
+
+body.section-scouts .main-navigation.scrolled {
+	background-color: #004851;
+}
+
+body.section-scouts .page__header, body.section-scouts .page__sidebar, body.section-scouts .post__header, body.section-scouts .post__sidebar {
+	background-color: #004851;
+}
+
+body.section-scouts .page__aside section, body.section-scouts .post__aside section {
+	background-color: #004851;
+}
+
+body.section-explorers .site-branding__logo {
+	background-image: url(images/logos/explorers-logo.png);
+}
+
+body.section-explorers .main-navigation.scrolled {
+	background-color: #003982;
+}
+
+body.section-explorers .page__header, body.section-explorers .page__sidebar, body.section-explorers .post__header, body.section-explorers .post__sidebar {
+	background-color: #003982;
+}
+
+body.section-explorers .page__aside section, body.section-explorers .post__aside section {
+	background-color: #003982;
+}
+
+body.section-network .site-branding__logo {
+	background-image: url(images/logos/network-logo.png);
+}
+
+body.section-network .main-navigation.scrolled {
+	background-color: #000;
+}
+
+body.section-network .page__header, body.section-network .page__sidebar, body.section-network .post__header, body.section-network .post__sidebar {
+	background-color: #000;
+}
+
+body.section-network .page__aside section, body.section-network .post__aside section {
+	background-color: #000;
 }
 
 .front-page {
@@ -1088,10 +1178,10 @@ body.section-beavers .page__aside section, body.section-beavers .post__aside sec
 	.front-page .main-content.has-sidebar article {
 		width: 64.76667%;
 	}
-	.front-page .main-content.has-sidebar aside {
+	.front-page .main-content.has-sidebar aside, .front-page .main-content.has-sidebar #secondary {
 		width: 31.43333%;
 		background-color: #00a794;
-		padding: 0 2rem;
+		padding: 2rem;
 		color: #fff;
 		margin-top: 2rem;
 	}
@@ -1139,6 +1229,7 @@ body.section-beavers .page__aside section, body.section-beavers .post__aside sec
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	margin-top: 2rem;
 	/* Then we define how is distributed the remaining space */
 	justify-content: space-between;
 }
@@ -1182,6 +1273,7 @@ body.section-beavers .page__aside section, body.section-beavers .post__aside sec
 	background-image: url(images/logos/logo-linear-trimmed.png);
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position-y: center;
 	width: 261px;
 	height: 74px;
 }
@@ -1218,6 +1310,7 @@ body.section-beavers .page__aside section, body.section-beavers .post__aside sec
 .site-branding--mobile .site-branding__title {
 	font-size: medium;
 	margin-left: 50px;
+	line-height: 1.3em;
 }
 
 .site-sub-header {
@@ -1324,6 +1417,7 @@ body.section-beavers .page__aside section, body.section-beavers .post__aside sec
 
 .widget .widget-title {
 	margin-top: 0;
+	font-size: large;
 }
 
 .widget select {

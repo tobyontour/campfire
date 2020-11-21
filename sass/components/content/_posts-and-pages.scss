@@ -14,7 +14,11 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	// margin: 1.5em 0 0;
+	margin: 0;
+	p:first-child {
+		margin-top: 0;
+	}
 }
 
 .page-links {
@@ -23,14 +27,25 @@
 }
 
 .page, .post {
-	// background-repeat: no-repeat;
-  // background-size: contain;
-  // margin-top: 130px;
-
 	&__header {
 		background-color: $color__background-title;
 		background-color: $color__scout-purple;
 		color: $color__text-inverted;
+	}
+
+	.entry-header {
+		display: none;
+		text-align: right;
+		font-size: small;
+		.byline {
+			display: none;
+		}
+	}
+	.entry-footer {
+		span {
+			margin-right: 2em;
+			font-size: small;
+		}
 	}
 
 	&__title {
@@ -44,17 +59,13 @@
 	}
 
 	&__content {
-		// background-color: lawngreen;
 		@include center-section;
 		article {
-			// background-color: mediumaquamarine;
 			padding: $gap;
 		}
 	}
 
 	&__aside {
-		// background-color: lightcoral;
-		// background-color: $color__background-title;
 		section {
 			background-color: $color__scout-teal;
 			color: $color__text-inverted;
@@ -63,15 +74,16 @@
 			}
 
 			padding: $gap;
+			margin-bottom: $gap;
+			h2 {
+				margin-top: 0;
+				font-size: large;
+			}
 		}
 	}
 
 	&__content--has-aside {
 		@include container;
-		// .share-links {
-		// 	@include column-width(12);
-		// 	padding: $gap 0;
-		// }
 		article {
 			@include column-width(12);
 		}
@@ -80,9 +92,6 @@
 			padding: $gap 0;
 		}
 		@include tablet-plus {
-			// .share-links {
-			// 	@include column-width(2);
-			// }
 			article {
 				@include column-width(8);
 			}
@@ -94,21 +103,7 @@
 
 	&__sidebar {
 		background-color: $color__background-title;
-	  #secondary {
-			@include center-section;
-			@include container;
-			padding: $gap;
-			section {
-				padding: $gap;
-				background-color: $color__background-body;
-				@include column-width(12);
-				@include tablet-plus {
-					width: auto;
-					max-width: 50%;
-					// @include column-width(4);
-				}
-			}
-		}
+
 	}
 
 	&__hero {
@@ -120,26 +115,114 @@
 			width: 100%;
 		}
 	}
+
+	#secondary {
+		@include center-section;
+		@include container;
+		padding: $gap;
+		section {
+			padding: $gap;
+			background-color: $color__background-body;
+			@include column-width(12);
+			@include tablet-plus {
+				@include column-width(6);
+			}
+		}
+	}
 }
 
 #masthead {
 	min-height: 22px;
 }
 
-body.section-beavers {
-	.site-branding__logo {
-		background-image: $url__beavers-logo;
-	}
-	.main-navigation.scrolled {
-		background-color: $color__beavers;
-	}
-	.page, .post {
-		&__header {
+body {
+	&.section-beavers {
+		.site-branding__logo {
+			background-image: $url__beavers-logo;
+		}
+		.main-navigation.scrolled {
 			background-color: $color__beavers;
 		}
-		&__aside {
-			section {
+		.page, .post {
+			&__header, &__sidebar {
 				background-color: $color__beavers;
+			}
+			&__aside {
+				section {
+					background-color: $color__beavers;
+				}
+			}
+		}
+	}
+	&.section-cubs {
+		.site-branding__logo {
+			background-image: $url__cubs-logo;
+		}
+		.main-navigation.scrolled {
+			background-color: $color__cubs;
+		}
+		.page, .post {
+			&__header, &__sidebar {
+				background-color: $color__cubs;
+			}
+			&__aside {
+				section {
+					background-color: $color__cubs;
+				}
+			}
+		}
+	}
+	&.section-scouts {
+		.site-branding__logo {
+			background-image: $url__scouts-logo;
+		}
+		.main-navigation.scrolled {
+			background-color: $color__scouts;
+		}
+		.page, .post {
+			&__header, &__sidebar {
+				background-color: $color__scouts;
+			}
+			&__aside {
+				section {
+					background-color: $color__scouts;
+				}
+			}
+		}
+	}
+	&.section-explorers {
+		.site-branding__logo {
+			background-image: $url__explorers-logo;
+		}
+		.main-navigation.scrolled {
+			background-color: $color__explorers;
+		}
+		.page, .post {
+      &__header, &__sidebar {
+				background-color: $color__explorers;
+			}
+			&__aside {
+				section {
+					background-color: $color__explorers;
+				}
+			}
+		}
+	}
+	&.section-network {
+		.site-branding__logo {
+			background-image: $url__network-logo;
+		}
+		.main-navigation.scrolled {
+			background-color: $color__network;
+		}
+		.page, .post {
+      &__header, &__sidebar {
+				background-color: $color__network;
+			}
+			&__aside {
+				section {
+					background-color: $color__network;
+				}
 			}
 		}
 	}

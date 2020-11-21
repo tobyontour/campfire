@@ -15,10 +15,10 @@
         article {
           @include column-width(8);
         }
-        aside {
+        aside, #secondary {
           @include column-width(4);
           background-color: $color__scout-teal;
-          padding: 0 $gap;
+          padding: $gap;
           color: $color__text-inverted;
           margin-top: $gap;
         }
@@ -63,6 +63,7 @@
 
 .primary-sidebar {
   @include container;
+  margin-top: $gap;
 
   /* Then we define how is distributed the remaining space */
   justify-content: space-between;

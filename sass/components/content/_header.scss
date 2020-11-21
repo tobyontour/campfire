@@ -12,6 +12,7 @@
     background-image: $url__org-logo;
     background-repeat: no-repeat;
     background-size: contain;
+    background-position-y: center;
     width: 261px;
     height: 74px;
   }
@@ -41,6 +42,7 @@
     .site-branding__title {
       font-size: medium;
       margin-left: 50px;
+      line-height: 1.3em;
     }
   }
 }
