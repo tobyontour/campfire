@@ -11,10 +11,10 @@
     &.has-sidebar {
       @include tablet-plus {
         article {
-          @include column-width(8);
+          @include column-width(7);
         }
         aside, #secondary {
-          @include column-width(4);
+          @include column-width(5);
           background-color: $color__scout-teal;
           padding: $gap;
           color: $color__text-inverted;
@@ -22,6 +22,7 @@
       }
     }
     aside {
+      @include column-width(12);
       background-color: $color__scout-teal;
       padding: 0 $gap;
       color: $color__text-inverted;
@@ -81,11 +82,11 @@
     @include column-width(12);
     padding: 0 $gap;
     @include tablet {
-      padding: 0;
+      // padding: 0;
       @include column-width(6);
     }
     @include desktop {
-      padding: 0;
+      // padding: 0;
       @include column-width(4);
     }
   }

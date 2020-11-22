@@ -35,21 +35,6 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
 
 	<header id="masthead" class="site-header <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
-		<div class="site-branding">
-			<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
-				<?php the_custom_logo(); ?>
-			</div>
-
-			<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-
-			<?php
-				$campfire_description = get_bloginfo( 'description', 'display' );
-				if ( $campfire_description || is_customize_preview() ) :
-			?>
-				<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
 		<nav id="site-navigation" class="main-navigation">
 			<div class="site-branding--mobile">
 				<div class="site-branding__logo"></div>
@@ -74,6 +59,20 @@
 			?>
 		</nav><!-- #site-navigation -->
 
+		<div class="site-branding">
+			<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
+				<?php the_custom_logo(); ?>
+			</div>
+
+			<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+
+			<?php
+				$campfire_description = get_bloginfo( 'description', 'display' );
+				if ( $campfire_description || is_customize_preview() ) :
+			?>
+				<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
 
 	</header><!-- #masthead -->
 

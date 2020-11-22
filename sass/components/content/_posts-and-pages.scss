@@ -64,6 +64,11 @@
 		}
 	}
 
+	.comments-area {
+		@include column-width(6);
+		padding: $gap;
+	}
+
 	&__aside {
 		section {
 			background-color: $color__scout-teal;

@@ -782,6 +782,7 @@ textarea {
 	border: none;
 	margin-right: 0;
 	margin-left: auto;
+	max-height: 40px;
 }
 
 .main-navigation button.menu-toggle svg rect {
@@ -996,6 +997,11 @@ body.admin-bar .main-navigation {
 	padding: 2rem;
 }
 
+.page .comments-area, .post .comments-area {
+	width: 48.1%;
+	padding: 2rem;
+}
+
 .page__aside section, .post__aside section {
 	background-color: #00a794;
 	color: #fff;
@@ -1174,10 +1180,10 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 
 @media (min-width: 768px) {
 	.front-page .main-content.has-sidebar article {
-		width: 64.76667%;
+		width: 56.43333%;
 	}
 	.front-page .main-content.has-sidebar aside, .front-page .main-content.has-sidebar #secondary {
-		width: 31.43333%;
+		width: 39.76667%;
 		background-color: #00a794;
 		padding: 2rem;
 		color: #fff;
@@ -1185,6 +1191,7 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 }
 
 .front-page .main-content aside {
+	width: 100%;
 	background-color: #00a794;
 	padding: 0 2rem;
 	color: #fff;
@@ -1264,14 +1271,12 @@ body.section-network .page__aside section, body.section-network .post__aside sec
 
 @media (min-width: 768px) and (max-width: 1023px) {
 	.primary-sidebar .widget {
-		padding: 0;
 		width: 48.1%;
 	}
 }
 
 @media (min-width: 1024px) {
 	.primary-sidebar .widget {
-		padding: 0;
 		width: 31.43333%;
 	}
 }
