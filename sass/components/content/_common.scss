@@ -1,0 +1,12 @@
+main {
+  .page-header {
+    background-color: $color__scout-purple;
+    color: $color__text-inverted;
+    margin: 0;
+  }
+  h1.page-title {
+    font-size: xx-large;
+    margin: 0;
+    padding: $gap;
+  }
+}

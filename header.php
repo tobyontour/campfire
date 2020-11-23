@@ -31,10 +31,9 @@
 
 
 <div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } else { echo 'site--inside'; } ?>">
-	<div class="body__background-image <?php if ( is_front_page() ) { echo 'body__background-image--front'; } ?>"></div>
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
 
-	<header id="masthead" class="site-header <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
+	<header id="masthead" class="site-header body__background-image <?php if ( is_front_page() ) { echo 'body__background-image--front'; } ?> <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
 		<nav id="site-navigation" class="main-navigation">
 			<div class="site-branding--mobile">
 				<div class="site-branding__logo"></div>

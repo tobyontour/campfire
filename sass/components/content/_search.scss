@@ -1,0 +1,13 @@
+.content-search {
+  @include center-section;
+
+  article {
+    @include column-width(12);
+    padding: $gap;
+    border-bottom: 1px solid $color__background-hr;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
