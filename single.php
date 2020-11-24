@@ -18,15 +18,15 @@ get_header();
 	}
 	</style>
 	<?php endif; ?>
-	<main class="post">
-		<header class="post__header">
-			<div class="post__header-wrapper">
-				<h1 class="post__title"><?php echo get_the_title(); ?></h1>
-				<div class="post__subtitle"></div>
+	<main class="full-post">
+		<header class="full-post__header">
+			<div class="full-post__header-wrapper">
+				<h1 class="full-post__title"><?php echo get_the_title(); ?></h1>
+				<div class="full-post__subtitle"></div>
 			</div>
 
 		</header>
-		<section class="post__content post__content--has-aside">
+		<section class="full-post__content full-post__content--has-aside">
 
 			<?php
 			while ( have_posts() ) :
@@ -43,7 +43,7 @@ get_header();
 
 				?>
 
-			<aside class="post__aside">
+			<aside class="full-post__aside">
 				<?php if ( 'post' === get_post_type() ) : ?>
 					<section class="entry-meta">
 						<?php
@@ -52,7 +52,7 @@ get_header();
 					</section><!-- .entry-meta -->
 				<?php endif; ?>
 				<?php if ( is_active_sidebar( 'page-1' ) ) : ?>
-					<div class="post__widgets widget-area">
+					<div class="full-post__widgets widget-area">
 						<?php dynamic_sidebar( 'page-1' ); ?>
 					</div>
 				<?php endif; ?>
@@ -102,7 +102,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 		</section>
-		<section class="post__sidebar">
+		<section class="full-post__sidebar">
 			<?php get_sidebar(); ?>
 		</section>
 	</main><!-- #main -->

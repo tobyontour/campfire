@@ -73,6 +73,11 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+		<?php if ( is_front_page() && is_active_sidebar( 'banner' ) ) : ?>
+			<div class="banner-sidebar widget-area">
+				<?php dynamic_sidebar( 'banner' ); ?>
+			</div>
+		<?php endif; ?>
 	</header><!-- #masthead -->
 
 	<?php if ( !is_front_page() ) : ?>

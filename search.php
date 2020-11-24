@@ -22,9 +22,11 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 
+			<ul class="article-list">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
+				echo '<li class="article-list__item">';
 				the_post();
 
 				/**
@@ -33,8 +35,10 @@ get_header();
 				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', 'search' );
-
+				echo '</li>';
 			endwhile;
+
+			echo "</ul>";
 
 			the_posts_navigation();
 

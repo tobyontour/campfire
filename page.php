@@ -15,14 +15,14 @@
 get_header();
 ?>
 
-	<main class="page">
-		<header class="page__header">
-			<div class="page__header-wrapper">
-				<h1 class="page__title"><?php echo get_the_title(); ?></h1>
-				<!--<div class="page__subtitle"></div>-->
+	<main class="full-page">
+		<header class="full-page__header">
+			<div class="full-page__header-wrapper">
+				<h1 class="full-page__title"><?php echo get_the_title(); ?></h1>
+				<!--<div class="full-page__subtitle"></div>-->
 			</div>
 		</header>
-		<section class="page__content page__content--has-aside">
+		<section class="full-page__content page__content--has-aside">
 			<?php
 				while ( have_posts() ) :
 					the_post();
@@ -36,15 +36,15 @@ get_header();
 
 				endwhile; // End of the loop.
 				?>
-			<aside class="page__aside">
+			<aside class="full-page__aside">
 				<?php if ( is_active_sidebar( 'page-1' ) ) : ?>
-					<div class="page__widgets widget-area">
+					<div class="full-page__widgets widget-area">
 						<?php dynamic_sidebar( 'page-1' ); ?>
 					</div>
 				<?php endif; ?>
 			</aside>
 		</section>
-		<section class="page__sidebar">
+		<section class="full-page__sidebar">
 			<?php get_sidebar(); ?>
 		</section>
 	</main><!-- #main -->

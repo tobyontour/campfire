@@ -14,11 +14,6 @@
 
 get_header();
 ?>
-<?php if ( is_active_sidebar( 'banner' ) ) : ?>
-  <div class="banner-sidebar widget-area">
-    <?php dynamic_sidebar( 'banner' ); ?>
-  </div>
-<?php endif; ?>
 
 <main id="primary" class="site-main front-page">
 

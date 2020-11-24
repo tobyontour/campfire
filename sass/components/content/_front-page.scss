@@ -1,5 +1,5 @@
 .front-page {
-  margin-top: 21rem;
+  margin-top: -3rem;
 
   .main-content {
     margin-top: $gap;
@@ -34,11 +34,9 @@
 }
 
 .banner-sidebar {
-  padding-top: 14rem;
-  margin: 0 $gap;
+  padding-top: 6rem;
+  margin: 0 $gap 0 20em;
   @include desktop {
-    margin: 0;
-    margin: 7rem $gap 0;
     margin: 0;
     height: 14rem;
     padding-top: 5rem;

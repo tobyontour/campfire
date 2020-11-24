@@ -1,13 +1,43 @@
 .content-search {
-  @include center-section;
+
 
   article {
     @include column-width(12);
     padding: $gap;
-    border-bottom: 1px solid $color__background-hr;
 
     a {
       text-decoration: none;
     }
+  }
+
+  .entry-meta, .entry-footer {
+    display: none;
+  }
+
+  .article-list {
+
+  }
+
+  .article-list__item {
+    @include column-width(12);
+    border-bottom: 1px solid $color__background-hr;
+
+    @include tablet {
+      @include column-width(6);
+    }
+    @include desktop {
+      @include column-width(4);
+    }
+  }
+}
+
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  &__item {
+    width: 100%;
+    list-style: none;
   }
 }
