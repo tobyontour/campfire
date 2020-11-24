@@ -23,36 +23,17 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php if ( is_front_page() ) : ?>
 <style>
 	.body__background-image {
 		background-image: url(<?php header_image(); ?>);
 	}
-	</style>
-<div class="body__background-image"></div>
-<?php endif; ?>
+</style>
 
-<div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } ?>">
+
+<div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } else { echo 'site--inside'; } ?>">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
 
-	<header id="masthead" class="site-header <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
-		<?php if ( is_front_page() ) : ?>
-			<div class="site-branding">
-				<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
-				<?php the_custom_logo(); ?>
-				</div>
-
-				<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-
-				<?php
-				$campfire_description = get_bloginfo( 'description', 'display' );
-				if ( $campfire_description || is_customize_preview() ) :
-					?>
-					<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-				<?php endif; ?>
-			</div><!-- .site-branding -->
-		<?php endif; ?>
-
+	<header id="masthead" class="site-header body__background-image <?php if ( is_front_page() ) { echo 'body__background-image--front'; } ?> <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
 		<nav id="site-navigation" class="main-navigation">
 			<div class="site-branding--mobile">
 				<div class="site-branding__logo"></div>
@@ -76,13 +57,34 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		<?php if ( function_exists('bcn_display') ) : ?>
-		<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-			<div class="breadcrumbs__wrapper">
-				<?php
-				bcn_display();
-				?>
+
+		<div class="site-branding">
+			<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
+				<?php the_custom_logo(); ?>
 			</div>
-		</nav>
-		<?php endif; ?>
+
+			<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+
+			<?php
+				$campfire_description = get_bloginfo( 'description', 'display' );
+				if ( $campfire_description || is_customize_preview() ) :
+			?>
+				<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
+
 	</header><!-- #masthead -->
+
+	<?php if ( !is_front_page() ) : ?>
+		<div class="site-sub-header">
+			<?php if ( function_exists('bcn_display') ) : ?>
+			<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+				<div class="breadcrumbs__wrapper">
+					<?php
+					bcn_display();
+					?>
+				</div>
+			</nav>
+			<?php endif; ?>
+		</div>
+	<?php endif; ?>

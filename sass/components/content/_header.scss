@@ -1,14 +1,14 @@
-#masthead {
-  position: relative;
-}
-
 .site-branding {
   display: inline-block;
   width: auto;
-  padding: 60px 40px 20px;
+  position: absolute;
+  top: 60px;
+  left: 40px;
   &__logo {
     background-image: $url__org-logo;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
     width: 261px;
     height: 74px;
   }
@@ -38,14 +38,28 @@
     .site-branding__title {
       font-size: medium;
       margin-left: 50px;
+      line-height: 1.3em;
     }
   }
 }
 
+.site-sub-header {
+  // margin-top: 16rem;
+  // &__page-title {
+  //   padding: 0 $gap;
+  //   margin: 0;
+  //   @include center-section;
+  // }
+}
+
 .body__background-image {
-  position: absolute;
+  // position: absolute;
+  // top: 0;
   width: 100%;
-  height: 390px;
+  height: 260px;
+  &--front {
+    height: 390px;
+  }
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;

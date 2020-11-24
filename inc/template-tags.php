@@ -119,7 +119,7 @@ if ( ! function_exists( 'campfire_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function campfire_post_thumbnail() {
+	function campfire_post_thumbnail($size = 'post-thumbnail') {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -127,16 +127,16 @@ if ( ! function_exists( 'campfire_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+			<!--<div class="post-thumbnail">
+				<?php //the_post_thumbnail(); ?>
+			</div>--><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
 					the_post_thumbnail(
-						'post-thumbnail',
+						$size,
 						array(
 							'alt' => the_title_attribute(
 								array(

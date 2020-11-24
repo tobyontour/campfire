@@ -1,5 +1,7 @@
 a {
 	color: $color__link;
+	text-decoration-style: dashed;
+	text-underline-position: under;
 
 	&:visited {
 		color: $color__link-visited;

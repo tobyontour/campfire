@@ -10,8 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+	<main id="primary" class="content-search">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">

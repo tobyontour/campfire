@@ -208,3 +208,33 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 add_image_size( 'hero', 1200, 400, true );
+
+add_filter( 'body_class', function ( $classes ) {
+
+	if (($key = array_search('page', $classes)) !== false) {
+    unset($classes[$key]);
+	}
+
+	$sections = [
+		'beavers',
+		'cubs',
+		'scouts',
+		'explorers',
+		'network',
+		'volunteers',
+	];
+
+	$count = 0;
+	$section = "";
+	foreach (get_the_category() as $term) {
+		if (in_array(strtolower($term->name), $sections)) {
+			$section = $term->name;
+			$count++;
+		}
+	}
+	if ( $count == 1) {
+		$classes[] = "section-" . strtolower($section);
+	}
+
+  return $classes;
+});

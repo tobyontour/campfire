@@ -1,7 +1,5 @@
 .front-page {
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-top: 130px;
+  margin-top: 21rem;
 
   .main-content {
     margin-top: $gap;
@@ -13,38 +11,54 @@
     &.has-sidebar {
       @include tablet-plus {
         article {
-          @include column-width(8);
+          @include column-width(7);
         }
-        aside {
-          @include column-width(4);
+        aside, #secondary {
+          @include column-width(5);
           background-color: $color__scout-teal;
-          padding: 0 $gap;
+          padding: $gap;
           color: $color__text-inverted;
-          margin-top: $gap;
         }
       }
     }
     aside {
+      @include column-width(12);
       background-color: $color__scout-teal;
       padding: 0 $gap;
       color: $color__text-inverted;
+      a, a:hover, a:visited {
+        color: $color__text-inverted;
+      }
     }
   }
 }
 
-.site-header--front .main-navigation {
-  @include tablet-plus {
-    background-color: $color__shaded-dark;
-  }
-}
-
 .banner-sidebar {
-  margin-top: 9rem;
+  padding-top: 14rem;
+  margin: 0 $gap;
+  @include desktop {
+    margin: 0;
+    margin: 7rem $gap 0;
+    margin: 0;
+    height: 14rem;
+    padding-top: 5rem;
+  }
+
+  & + .front-page {
+    @include desktop {
+      margin-top: 7rem;
+    }
+    margin-top: 1rem;
+  }
+
+
   .widget {
     padding: $gap;
     background-color: $color__scout-yellow;
     @include center-section;
-    max-width: 40rem;
+    @include desktop {
+      max-width: 30rem;
+    }
   }
   .widget:last-child {
     margin-bottom: 0;
@@ -57,12 +71,10 @@
   }
 }
 
-.banner-sidebar + .front-page {
-  margin-top: $gap;
-}
 
 .primary-sidebar {
   @include container;
+  margin-top: $gap;
 
   /* Then we define how is distributed the remaining space */
   justify-content: space-between;
@@ -70,11 +82,11 @@
     @include column-width(12);
     padding: 0 $gap;
     @include tablet {
-      padding: 0;
+      // padding: 0;
       @include column-width(6);
     }
     @include desktop {
-      padding: 0;
+      // padding: 0;
       @include column-width(4);
     }
   }
@@ -82,4 +94,3 @@
     max-height: 600px;
   }
 }
-
