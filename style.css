@@ -828,6 +828,10 @@ textarea {
 	background-color: #00a794;
 }
 
+.main-navigation.toggled .menu-top-menu-container, .main-navigation.toggled .sub-menu {
+	background-color: #00a794;
+}
+
 .main-navigation.toggled li {
 	text-align: right;
 	font-size: x-large;

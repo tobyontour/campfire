@@ -60,6 +60,9 @@
 
   &.toggled {
     background-color: $color__scout-teal;
+    .menu-top-menu-container, .sub-menu {
+      background-color: $color__scout-teal;
+    }
     li {
       text-align: right;
       font-size: x-large;
