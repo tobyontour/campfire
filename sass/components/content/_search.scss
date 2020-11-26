@@ -1,4 +1,4 @@
-.content-search {
+.content-search, .content-archive {
 
 
   article {
@@ -14,10 +14,6 @@
     display: none;
   }
 
-  .article-list {
-
-  }
-
   .article-list__item {
     @include column-width(12);
     border-bottom: 1px solid $color__background-hr;
@@ -28,6 +24,24 @@
     @include desktop {
       @include column-width(4);
     }
+
+    &--full {
+      @include tablet {
+        @include column-width(8);
+      }
+      @include desktop {
+        @include column-width(8);
+      }
+
+      .entry-meta, .entry-footer {
+        display: block;
+      }
+    }
+  }
+
+  .sidebar {
+    float: right;
+    @include column-width(4);
   }
 }
 

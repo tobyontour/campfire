@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main content-archive">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -21,19 +21,23 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
+			<ul class="article-list article-list--full">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
+				echo '<li class="article-list__item article-list__item--full">';
 				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', get_post_type() );
-
+				echo '</li>';
 			endwhile;
+
+			echo "</ul>";
 
 			the_posts_navigation();
 
@@ -44,6 +48,9 @@ get_header();
 		endif;
 		?>
 
+		<section class="sidebar">
+		  <?php wp_get_archives(); ?>
+		</section>
 	</main><!-- #main -->
 
 <?php

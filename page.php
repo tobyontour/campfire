@@ -22,7 +22,7 @@ get_header();
 				<!--<div class="full-page__subtitle"></div>-->
 			</div>
 		</header>
-		<section class="full-page__content page__content--has-aside">
+		<section class="full-page__content full-page__content--has-aside">
 			<?php
 				while ( have_posts() ) :
 					the_post();
