@@ -22,6 +22,7 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 
+			<section class="search__content">
 			<ul class="article-list">
 			<?php
 			/* Start the Loop */
@@ -39,6 +40,7 @@ get_header();
 			endwhile;
 
 			echo "</ul>";
+			echo "</section>";
 
 			the_posts_navigation();
 
@@ -48,9 +50,12 @@ get_header();
 
 		endif;
 		?>
-
+		<section class="full-post__sidebar">
+			<?php get_sidebar(); ?>
+		</section>
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+
+// get_sidebar();
 get_footer();

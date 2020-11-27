@@ -1,6 +1,4 @@
 .content-search, .content-archive {
-
-
   article {
     @include column-width(12);
     padding: $gap;
@@ -39,10 +37,23 @@
     }
   }
 
-  .sidebar {
-    float: right;
-    @include column-width(4);
-  }
+  // .sidebar {
+  //   float: right;
+  //   @include column-width(4);
+  // }
+  #secondary {
+		@include center-section;
+		@include container;
+		padding: $gap;
+		section {
+			padding: $gap;
+			background-color: $color__background-body;
+			@include column-width(12);
+			@include tablet-plus {
+				@include column-width(6);
+			}
+		}
+	}
 }
 
 .article-list {

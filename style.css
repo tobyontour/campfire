@@ -1439,9 +1439,29 @@ body.single.section-network .full-page__aside section, body.single.section-netwo
 	display: block;
 }
 
-.content-search .sidebar, .content-archive .sidebar {
-	float: right;
-	width: 31.43333%;
+.content-search #secondary, .content-archive #secondary {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	padding: 2rem;
+}
+
+.content-search #secondary section, .content-archive #secondary section {
+	padding: 2rem;
+	background-color: #fff;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.content-search #secondary section, .content-archive #secondary section {
+		width: 48.1%;
+	}
 }
 
 .article-list {
