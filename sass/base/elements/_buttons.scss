@@ -2,13 +2,13 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
+	border: none;
+	border-radius: 10px;
+	background: $color__button-background;
+	color: $color__button-text;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.5em 0.8em 0.5em;
+	font-weight: 900;
 
 	&:hover {
 		border-color: $color__border-button-hover;

@@ -15,7 +15,10 @@ install:
 	composer install
 	npm install
 
-build:
+dev-build:
+	npm run bundle
+
+build: lint
 	npm run bundle
 
 lint:

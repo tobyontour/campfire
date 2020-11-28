@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
 	<?php wp_head(); ?>
 </head>
 
@@ -31,7 +31,7 @@
 
 
 <div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } else { echo 'site--inside'; } ?>">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'campfire' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
 
 	<header id="masthead" class="site-header body__background-image <?php if ( is_front_page() ) { echo 'body__background-image--front'; } ?> <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
 		<nav id="site-navigation" class="main-navigation">

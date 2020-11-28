@@ -1,10 +1,11 @@
-.content-search, .content-archive {
+.content--search, .content--archive {
   article {
     @include column-width(12);
-    padding: $gap;
+    padding: 0 $gap $gap;
 
     a {
       text-decoration: none;
+      color: $color__text-main;
     }
   }
 
@@ -37,23 +38,9 @@
     }
   }
 
-  // .sidebar {
-  //   float: right;
-  //   @include column-width(4);
-  // }
-  #secondary {
-		@include center-section;
-		@include container;
-		padding: $gap;
-		section {
-			padding: $gap;
-			background-color: $color__background-body;
-			@include column-width(12);
-			@include tablet-plus {
-				@include column-width(6);
-			}
-		}
-	}
+  .posts-navigation {
+    padding: $gap;
+  }
 }
 
 .article-list {
@@ -64,5 +51,23 @@
   &__item {
     width: 100%;
     list-style: none;
+  }
+}
+
+.search-form {
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: flex-start;
+
+  input[type="submit"] {
+    background-color: inherit;
+    border: 1px solid white;
+  }
+  input[type="search"] {
+    // max-width: 5em;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: $gap / 2;
   }
 }

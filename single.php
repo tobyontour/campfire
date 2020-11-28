@@ -18,15 +18,16 @@ get_header();
 	}
 	</style>
 	<?php endif; ?>
-	<main class="full-post">
-		<header class="full-post__header">
-			<div class="full-post__header-wrapper">
-				<h1 class="full-post__title"><?php echo get_the_title(); ?></h1>
-				<div class="full-post__subtitle"></div>
-			</div>
 
+	<main class="content content--post">
+		<header class="content-header">
+			<div class="content-header__wrapper">
+				<h1 class="content-header__title"><?php echo get_the_title(); ?></h1>
+				<div class="content-header__subtitle"></div>
+			</div>
 		</header>
-		<section class="full-post__content full-post__content--has-aside">
+
+		<section class="content-body content-body--has-aside">
 
 			<?php
 			while ( have_posts() ) :
@@ -34,16 +35,9 @@ get_header();
 
 				get_template_part( 'template-parts/content', get_post_type() );
 
-				// the_post_navigation(
-				// 	array(
-				// 		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'campfire' ) . '</span> <span class="nav-title">%title</span>',
-				// 		'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'campfire' ) . '</span> <span class="nav-title">%title</span>',
-				// 	)
-				// );
-
 				?>
 
-			<aside class="full-post__aside">
+			<aside class="content-body__aside">
 				<?php if ( 'post' === get_post_type() ) : ?>
 					<section class="entry-meta">
 						<?php
@@ -51,6 +45,18 @@ get_header();
 						?>
 					</section><!-- .entry-meta -->
 				<?php endif; ?>
+
+				<section class="">
+					<?php
+					the_post_navigation(
+						array(
+							'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'campfire' ) . '</span> <span class="nav-title">%title</span>',
+							'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'campfire' ) . '</span> <span class="nav-title">%title</span>',
+						)
+					);
+					?>
+				</section>
+
 				<?php if ( is_active_sidebar( 'page-1' ) ) : ?>
 					<div class="full-post__widgets widget-area">
 						<?php dynamic_sidebar( 'page-1' ); ?>
@@ -97,16 +103,22 @@ get_header();
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
-					comments_template();
+					?>
+					<section class="comments">
+						<button class="accordion">Comments</button>
+						<div class="panel">
+							<?php comments_template(); ?>
+						</div>
+					</section>
+				<?php
 				endif;
 		endwhile; // End of the loop.
 		?>
 		</section>
-		<section class="full-post__sidebar">
+		<section class="content-sidebar">
 			<?php get_sidebar(); ?>
 		</section>
 	</main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();

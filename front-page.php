@@ -18,9 +18,9 @@ get_header();
 <main id="primary" class="site-main front-page">
 
 	<ul class="join-boxes">
-    <?php //if ( is_page( 'beavers' ) ): ?>
+    <?php if ( get_page_by_path('beavers') ): ?>
 	  <li class="join-boxes__item join-boxes__item--beavers">
-      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/beavers/">
+      <a class="join-boxes__link" href="/beavers">
         <div class="join-boxes__logo beavers-logo">Beavers</div>
         <div class="join-boxes__text">
           <p>6-8 years</p>
@@ -28,9 +28,11 @@ get_header();
         </div>
       </a>
     </li>
-    <?php //endif; ?>
+    <?php
+      endif;
+      if ( get_page_by_path('cubs') ): ?>
 		<li class="join-boxes__item join-boxes__item--cubs">
-      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/cubs/">
+      <a class="join-boxes__link" href="/cubs">
 			  <div class="join-boxes__logo cubs-logo">Cubs</div>
         <div class="join-boxes__text">
           <p>8-10½ years</p>
@@ -38,8 +40,11 @@ get_header();
         </div>
       </a>
 		</li>
+    <?php
+      endif;
+      if ( get_page_by_path('scouts') ): ?>
 		<li class="join-boxes__item join-boxes__item--scouts">
-      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/scouts/">
+      <a class="join-boxes__link" href="/scouts">
 			  <div class="join-boxes__logo scouts-logo">Scouts</div>
         <div class="join-boxes__text">
           <p>10½-14 years</p>
@@ -47,8 +52,11 @@ get_header();
         </div>
       </a>
 		</li>
+    <?php
+      endif;
+      if ( get_page_by_path('explorers') ): ?>
 		<li class="join-boxes__item join-boxes__item--explorers">
-      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/explorers/">
+      <a class="join-boxes__link" href="/explorers">
 			  <div class="join-boxes__logo explorers-logo">Explorers</div>
         <div class="join-boxes__text">
           <p>10½-14 years</p>
@@ -56,8 +64,11 @@ get_header();
         </div>
       </a>
 		</li>
+    <?php
+      endif;
+      if ( get_page_by_path('network') ): ?>
 		<li class="join-boxes__item join-boxes__item--network">
-      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/network/">
+      <a class="join-boxes__link" href="/network">
 			  <div class="join-boxes__logo network-logo">Network</div>
         <div class="join-boxes__text">
           <p>10½-14 years</p>
@@ -65,15 +76,19 @@ get_header();
         </div>
       </a>
 		</li>
+    <?php
+      endif;
+      if ( get_page_by_path('volunteers') ): ?>
 		<li class="join-boxes__item join-boxes__item--volunteers">
-      <a class="join-boxes__link" href="http://127.0.0.1:8888/what-we-do/leaders/">
+      <a class="join-boxes__link" href="/leaders">
 			  <div class="join-boxes__logo volunteers-logo">Volunteers</div>
         <div class="join-boxes__text">
           <p>All adults welcome!</p>
           <p>Develop young people, have fun and build new skills</p>
         </div>
       </a>
-		</li>
+    </li>
+    <?php endif; ?>
   </ul>
 
   <div class="main-content has-sidebar">
