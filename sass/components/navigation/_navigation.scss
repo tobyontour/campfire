@@ -1,26 +1,13 @@
 // https://code.tutsplus.com/tutorials/how-to-make-a-drop-down-menu-in-wordpress--cms-32991
 
 .main-nav {
-	position: absolute;
-	top: 10px;
-	right: 0;
-	ul ul {
-		display: none;
-		position: absolute;
-    top: 3em;
-    left: 0;
-    z-index: 99999;
-    width: 180px;
-    background: #fff;
-    box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-	}
-	ul li:hover > ul {
-    display: block;
-	}
-	li {
-    position: relative;
-	}
 
+
+	// 	.current_page_item > a,
+// 	.current-menu-item > a,
+// 	.current_page_ancestor > a,
+// 	.current-menu-ancestor > a {
+// 	}
 }
 
 // .main-navigation {
@@ -87,27 +74,22 @@
 // 		text-decoration: none;
 // 	}
 
-// 	.current_page_item > a,
-// 	.current-menu-item > a,
-// 	.current_page_ancestor > a,
-// 	.current-menu-ancestor > a {
-// 	}
 // }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+	// display: block;
 }
 
 @media screen and (min-width: $tablet-width) {
 
 	.menu-toggle {
-		display: none;
+		// display: none;
 	}
 
 	.main-navigation ul {
-		display: flex;
+		// display: flex;
 	}
 }
 
