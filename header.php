@@ -60,18 +60,20 @@
 		</nav><!-- #site-navigation -->
 
 		<div class="site-branding">
-			<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
-				<?php the_custom_logo(); ?>
-			</div>
+			<a href="/">
+				<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
+					<?php the_custom_logo(); ?>
+				</div>
 
-			<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a class="site-branding__title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 
-			<?php
-				$campfire_description = get_bloginfo( 'description', 'display' );
-				if ( $campfire_description || is_customize_preview() ) :
-			?>
-				<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
-			<?php endif; ?>
+				<?php
+					$campfire_description = get_bloginfo( 'description', 'display' );
+					if ( $campfire_description || is_customize_preview() ) :
+				?>
+					<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+				<?php endif; ?>
+			</a>
 		</div><!-- .site-branding -->
 
 		<?php if ( is_front_page() && is_active_sidebar( 'banner' ) ) : ?>
