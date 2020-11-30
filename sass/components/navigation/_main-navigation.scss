@@ -13,6 +13,8 @@
   &.scrolled {
     background-color: $color__scout-purple;
     .site-branding--mobile {
+      position: absolute;
+      top: 0;
       display: block;
     }
   }
@@ -114,6 +116,10 @@
     @include tablet-plus {
       display: none;
     }
+
+    &:focus {
+      border: none;
+    }
   }
 
   &.toggled {
@@ -125,6 +131,7 @@
       display: block;
       > ul {
         display: block;
+        width: 100%;
       }
     }
     .sub-menu {

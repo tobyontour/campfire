@@ -554,7 +554,7 @@ table {
 --------------------------------------------- */
 a {
 	color: #7413dc;
-	text-decoration-style: dashed;
+	text-decoration-style: dotted;
 	text-underline-position: under;
 }
 
@@ -711,7 +711,7 @@ textarea {
 
 @media (min-width: 768px) {
 	.main-navigation {
-		background-color: rgba(0, 0, 0, 0.3);
+		background-color: rgba(0, 0, 0, 0.4);
 	}
 }
 
@@ -720,6 +720,8 @@ textarea {
 }
 
 .main-navigation.scrolled .site-branding--mobile {
+	position: absolute;
+	top: 0;
 	display: block;
 }
 
@@ -802,7 +804,7 @@ textarea {
 
 .main-navigation .main-nav .sub-menu {
 	margin-top: 2rem;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .main-navigation .main-nav .sub-menu li {
@@ -840,6 +842,10 @@ textarea {
 	}
 }
 
+.main-navigation button.menu-toggle:focus {
+	border: none;
+}
+
 .main-navigation.toggled {
 	background-color: #00a794;
 }
@@ -854,6 +860,7 @@ textarea {
 
 .main-navigation.toggled .main-nav > ul {
 	display: block;
+	width: 100%;
 }
 
 .main-navigation.toggled .sub-menu {
@@ -1281,8 +1288,14 @@ body.single.section-network .content-header, body.single.section-network .conten
 	display: inline-block;
 	width: auto;
 	position: absolute;
-	top: 5.5rem;
+	top: 1.5rem;
 	left: 40px;
+}
+
+@media (min-width: 768px) {
+	.site-branding {
+		top: 5.5rem;
+	}
 }
 
 .site-branding__logo {
