@@ -30,10 +30,26 @@
 </style>
 
 
-<div id="page" class="site <?php if ( is_front_page() ) { echo 'site--front'; } else { echo 'site--inside'; } ?>">
+<div id="page" class="site 
+<?php 
+if ( is_front_page() ) {
+	echo 'site--front';
+} else {
+	echo 'site--inside'; } 
+?>
+">
 	<a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
 
-	<header id="masthead" class="site-header body__background-image <?php if ( is_front_page() ) { echo 'body__background-image--front'; } ?> <?php if ( is_front_page() ) { echo 'site-header--front'; } ?>">
+	<header id="masthead" class="site-header body__background-image 
+	<?php 
+	if ( is_front_page() ) {
+		echo 'body__background-image--front'; } 
+	?>
+	 <?php 
+		if ( is_front_page() ) {
+				echo 'site-header--front'; } 
+		?>
+">
 		<nav id="site-navigation" class="main-navigation">
 			<div class="site-branding--mobile">
 				<div class="site-branding__logo"></div>
@@ -51,9 +67,9 @@
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-					'container_class' => 'main-nav'
+					'theme_location'  => 'menu-1',
+					'menu_id'         => 'primary-menu',
+					'container_class' => 'main-nav',
 				)
 			);
 			?>
@@ -61,7 +77,12 @@
 
 		<div class="site-branding">
 			<a href="/">
-				<div class="site-branding__logo <?php if ( has_custom_logo() ) { echo "site-branding__logo--custom"; } ?>">
+				<div class="site-branding__logo 
+				<?php 
+				if ( has_custom_logo() ) {
+					echo 'site-branding__logo--custom'; } 
+				?>
+				">
 					<?php the_custom_logo(); ?>
 				</div>
 
@@ -69,8 +90,8 @@
 
 				<?php
 					$campfire_description = get_bloginfo( 'description', 'display' );
-					if ( $campfire_description || is_customize_preview() ) :
-				?>
+				if ( $campfire_description || is_customize_preview() ) :
+					?>
 					<div class="site-branding__description"><?php echo $campfire_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
 				<?php endif; ?>
 			</a>
@@ -83,9 +104,9 @@
 		<?php endif; ?>
 	</header><!-- #masthead -->
 
-	<?php if ( !is_front_page() ) : ?>
+	<?php if ( ! is_front_page() ) : ?>
 		<div class="site-sub-header">
-			<?php if ( function_exists('bcn_display') ) : ?>
+			<?php if ( function_exists( 'bcn_display' ) ) : ?>
 			<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
 				<div class="breadcrumbs__wrapper">
 					<?php

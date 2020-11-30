@@ -37,7 +37,7 @@ get_header();
 				echo '</li>';
 			endwhile;
 
-			echo "</ul>";
+			echo '</ul>';
 
 			the_posts_navigation();
 

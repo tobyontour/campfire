@@ -24,7 +24,7 @@
 	</header><!-- .entry-header -->
 
 	<a href="<?php echo get_permalink(); ?>">
-		<?php //campfire_post_thumbnail('medium'); ?>
+		<?php // campfire_post_thumbnail('medium'); ?>
 
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>

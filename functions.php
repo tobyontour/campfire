@@ -133,33 +133,39 @@ function campfire_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-	register_sidebar( array(
-		'name'          => 'Banner message',
-		'id'            => 'banner',
-		'description'   => esc_html__( 'Add any banner message here. Use sparingly.', 'campfire' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => 'Home Main Content',
-		'id'            => 'home-1',
-		'description'   => esc_html__( 'Add widgets here.', 'campfire' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => 'Page sidebar',
-		'id'            => 'page-1',
-		'description'   => esc_html__( 'Widgets to display alongside pages.', 'campfire' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => 'Banner message',
+			'id'            => 'banner',
+			'description'   => esc_html__( 'Add any banner message here. Use sparingly.', 'campfire' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) 
+	);
+	register_sidebar(
+		array(
+			'name'          => 'Home Main Content',
+			'id'            => 'home-1',
+			'description'   => esc_html__( 'Add widgets here.', 'campfire' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) 
+	);
+	register_sidebar(
+		array(
+			'name'          => 'Page sidebar',
+			'id'            => 'page-1',
+			'description'   => esc_html__( 'Widgets to display alongside pages.', 'campfire' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		) 
+	);
 
 }
 add_action( 'widgets_init', 'campfire_widgets_init' );
@@ -209,35 +215,38 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 add_image_size( 'hero', 1200, 400, true );
 
-add_filter( 'body_class', function ( $classes ) {
+add_filter(
+	'body_class',
+	function ( $classes ) {
 
-	if (($key = array_search('page', $classes)) !== false) {
-    unset($classes[$key]);
-	}
-
-	$sections = [
-		'beavers',
-		'cubs',
-		'scouts',
-		'explorers',
-		'network',
-		'volunteers',
-	];
-
-	$count = 0;
-	$section = "";
-	foreach (get_the_category() as $term) {
-		if (in_array(strtolower($term->name), $sections)) {
-			$section = $term->name;
-			$count++;
+		if ( ( $key = array_search( 'page', $classes ) ) !== false ) {
+			unset( $classes[ $key ] );
 		}
-	}
-	if ( $count == 1) {
-		$classes[] = "section-" . strtolower($section);
-	}
 
-  return $classes;
-});
+		$sections = array(
+			'beavers',
+			'cubs',
+			'scouts',
+			'explorers',
+			'network',
+			'volunteers',
+		);
+
+		$count   = 0;
+		$section = '';
+		foreach ( get_the_category() as $term ) {
+			if ( in_array( strtolower( $term->name ), $sections ) ) {
+				$section = $term->name;
+				$count++;
+			}
+		}
+		if ( $count == 1 ) {
+			$classes[] = 'section-' . strtolower( $section );
+		}
+
+		return $classes;
+	}
+);
 
 /**
  * Filter the except length to 20 words.
