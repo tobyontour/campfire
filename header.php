@@ -16,7 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">
 	<?php wp_head(); ?>
 </head>
 
@@ -30,24 +29,24 @@
 </style>
 
 
-<div id="page" class="site 
-<?php 
+<div id="page" class="site
+<?php
 if ( is_front_page() ) {
 	echo 'site--front';
 } else {
-	echo 'site--inside'; } 
+	echo 'site--inside'; }
 ?>
 ">
 	<a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
 
-	<header id="masthead" class="site-header body__background-image 
-	<?php 
+	<header id="masthead" class="site-header body__background-image
+	<?php
 	if ( is_front_page() ) {
-		echo 'body__background-image--front'; } 
+		echo 'body__background-image--front'; }
 	?>
-	 <?php 
+		<?php
 		if ( is_front_page() ) {
-				echo 'site-header--front'; } 
+				echo 'site-header--front'; }
 		?>
 ">
 		<nav id="site-navigation" class="main-navigation">
@@ -77,10 +76,10 @@ if ( is_front_page() ) {
 
 		<div class="site-branding">
 			<a href="/">
-				<div class="site-branding__logo 
-				<?php 
+				<div class="site-branding__logo
+				<?php
 				if ( has_custom_logo() ) {
-					echo 'site-branding__logo--custom'; } 
+					echo 'site-branding__logo--custom'; }
 				?>
 				">
 					<?php the_custom_logo(); ?>

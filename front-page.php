@@ -19,85 +19,85 @@ get_header();
 
 	<ul class="join-boxes">
 	<?php if ( get_page_by_path( 'beavers' ) ) : ?>
-	  <li class="join-boxes__item join-boxes__item--beavers">
-	  <a class="join-boxes__link" href="/beavers">
+		<li class="join-boxes__item join-boxes__item--beavers">
+		<a class="join-boxes__link" href="/beavers">
 		<div class="join-boxes__logo beavers-logo">Beavers</div>
 		<div class="join-boxes__text">
-		  <p>6-8 years</p>
-		  <p>Make friends and try new activities</p>
+			<p>6-8 years</p>
+			<p>Make friends and try new activities</p>
 		</div>
-	  </a>
+		</a>
 	</li>
 		<?php
-	  endif;
-	if ( get_page_by_path( 'cubs' ) ) : 
+		endif;
+	if ( get_page_by_path( 'cubs' ) ) :
 		?>
 		<li class="join-boxes__item join-boxes__item--cubs">
-	  <a class="join-boxes__link" href="/cubs">
-			  <div class="join-boxes__logo cubs-logo">Cubs</div>
+		<a class="join-boxes__link" href="/cubs">
+				<div class="join-boxes__logo cubs-logo">Cubs</div>
 		<div class="join-boxes__text">
-		  <p>8-10½ years</p>
-		  <p>Learn practical skills while having adventures</p>
+			<p>8-10½ years</p>
+			<p>Learn practical skills while having adventures</p>
 		</div>
-	  </a>
+		</a>
 		</li>
 		<?php
-	  endif;
-	if ( get_page_by_path( 'scouts' ) ) : 
+		endif;
+	if ( get_page_by_path( 'scouts' ) ) :
 		?>
 		<li class="join-boxes__item join-boxes__item--scouts">
-	  <a class="join-boxes__link" href="/scouts">
-			  <div class="join-boxes__logo scouts-logo">Scouts</div>
+		<a class="join-boxes__link" href="/scouts">
+				<div class="join-boxes__logo scouts-logo">Scouts</div>
 		<div class="join-boxes__text">
-		  <p>10½-14 years</p>
-		  <p>Build confidence, resilience and a sense of adventure</p>
+			<p>10½-14 years</p>
+			<p>Build confidence, resilience and a sense of adventure</p>
 		</div>
-	  </a>
+		</a>
 		</li>
 		<?php
-	  endif;
-	if ( get_page_by_path( 'explorers' ) ) : 
+		endif;
+	if ( get_page_by_path( 'explorers' ) ) :
 		?>
 		<li class="join-boxes__item join-boxes__item--explorers">
-	  <a class="join-boxes__link" href="/explorers">
-			  <div class="join-boxes__logo explorers-logo">Explorers</div>
+		<a class="join-boxes__link" href="/explorers">
+				<div class="join-boxes__logo explorers-logo">Explorers</div>
 		<div class="join-boxes__text">
-		  <p>10½-14 years</p>
-		  <p>Build confidence, resilience and a sense of adventure</p>
+			<p>10½-14 years</p>
+			<p>Build confidence, resilience and a sense of adventure</p>
 		</div>
-	  </a>
+		</a>
 		</li>
 		<?php
-	  endif;
-	if ( get_page_by_path( 'network' ) ) : 
+		endif;
+	if ( get_page_by_path( 'network' ) ) :
 		?>
 		<li class="join-boxes__item join-boxes__item--network">
-	  <a class="join-boxes__link" href="/network">
-			  <div class="join-boxes__logo network-logo">Network</div>
+		<a class="join-boxes__link" href="/network">
+				<div class="join-boxes__logo network-logo">Network</div>
 		<div class="join-boxes__text">
-		  <p>10½-14 years</p>
-		  <p>Build confidence, resilience and a sense of adventure</p>
+			<p>10½-14 years</p>
+			<p>Build confidence, resilience and a sense of adventure</p>
 		</div>
-	  </a>
+		</a>
 		</li>
 		<?php
-	  endif;
-	if ( get_page_by_path( 'volunteers' ) ) : 
+		endif;
+	if ( get_page_by_path( 'volunteers' ) ) :
 		?>
 		<li class="join-boxes__item join-boxes__item--volunteers">
-	  <a class="join-boxes__link" href="/leaders">
-			  <div class="join-boxes__logo volunteers-logo">Volunteers</div>
+		<a class="join-boxes__link" href="/leaders">
+				<div class="join-boxes__logo volunteers-logo">Volunteers</div>
 		<div class="join-boxes__text">
-		  <p>All adults welcome!</p>
-		  <p>Develop young people, have fun and build new skills</p>
+			<p>All adults welcome!</p>
+			<p>Develop young people, have fun and build new skills</p>
 		</div>
-	  </a>
+		</a>
 	</li>
 	<?php endif; ?>
-  </ul>
+	</ul>
 
-  <div class="main-content has-sidebar">
-  <?php
+	<div class="main-content has-sidebar">
+	<?php
 	while ( have_posts() ) :
 		the_post();
 
@@ -111,15 +111,14 @@ get_header();
 		endwhile; // End of the loop.
 	?>
 	<?php get_sidebar(); ?>
-  </div>
+	</div>
 
-  <?php if ( is_active_sidebar( 'home-1' ) ) : ?>
+	<?php if ( is_active_sidebar( 'home-1' ) ) : ?>
 	<div id="primary-sidebar" class="primary-sidebar widget-area">
 		<?php dynamic_sidebar( 'home-1' ); ?>
 	</div><!-- #primary-sidebar -->
-  <?php endif; ?>
+	<?php endif; ?>
 </main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();

@@ -7,9 +7,9 @@
  * @package Campfire
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'CAMPFIRE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'CAMPFIRE_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'campfire_setup' ) ) :
@@ -142,7 +142,7 @@ function campfire_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		) 
+		)
 	);
 	register_sidebar(
 		array(
@@ -153,7 +153,7 @@ function campfire_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		) 
+		)
 	);
 	register_sidebar(
 		array(
@@ -164,7 +164,7 @@ function campfire_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		) 
+		)
 	);
 
 }
@@ -174,11 +174,13 @@ add_action( 'widgets_init', 'campfire_widgets_init' );
  * Enqueue scripts and styles.
  */
 function campfire_scripts() {
-	wp_enqueue_style( 'campfire-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'campfire-style', get_stylesheet_uri(), array(), CAMPFIRE_VERSION );
+	wp_enqueue_style( 'campfire-font', 'https://fonts.googleapis.com/css?family=Nunito+Sans', array(), CAMPFIRE_VERSION );
+
 	wp_style_add_data( 'campfire-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'campfire-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'campfire-utils', get_template_directory_uri() . '/js/utils.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'campfire-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAMPFIRE_VERSION, true );
+	wp_enqueue_script( 'campfire-utils', get_template_directory_uri() . '/js/utils.js', array(), CAMPFIRE_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -219,7 +221,8 @@ add_filter(
 	'body_class',
 	function ( $classes ) {
 
-		if ( ( $key = array_search( 'page', $classes ) ) !== false ) {
+		$key = array_search( 'page', $classes, true );
+		if ( false !== $key ) {
 			unset( $classes[ $key ] );
 		}
 
@@ -235,12 +238,12 @@ add_filter(
 		$count   = 0;
 		$section = '';
 		foreach ( get_the_category() as $term ) {
-			if ( in_array( strtolower( $term->name ), $sections ) ) {
+			if ( in_array( strtolower( $term->name ), $sections, true ) ) {
 				$section = $term->name;
 				$count++;
 			}
 		}
-		if ( $count == 1 ) {
+		if ( 1 === $count ) {
 			$classes[] = 'section-' . strtolower( $section );
 		}
 
