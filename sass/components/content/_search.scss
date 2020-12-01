@@ -1,73 +1,81 @@
-.content--search, .content--archive {
-  article {
-    @include column-width(12);
-    padding: 0 $gap $gap;
+.content--search,
+.content--archive {
 
-    a {
-      text-decoration: none;
-      color: $color__text-main;
-    }
-  }
+	article {
 
-  .entry-meta, .entry-footer {
-    display: none;
-  }
+		@include column-width(12);
+		padding: 0 $gap $gap;
 
-  .article-list__item {
-    @include column-width(12);
-    border-bottom: 1px solid $color__background-hr;
+		a {
+			text-decoration: none;
+			color: $color__text-main;
+		}
+	}
 
-    @include tablet {
-      @include column-width(6);
-    }
-    @include desktop {
-      @include column-width(4);
-    }
+	.entry-meta,
+	.entry-footer {
+		display: none;
+	}
 
-    &--full {
-      @include tablet {
-        @include column-width(8);
-      }
-      @include desktop {
-        @include column-width(8);
-      }
+	.article-list__item {
 
-      .entry-meta, .entry-footer {
-        display: block;
-      }
-    }
-  }
+		@include column-width(12);
+		border-bottom: 1px solid $color__background-hr;
 
-  .posts-navigation {
-    padding: $gap;
-  }
+		@include tablet {
+
+			@include column-width(6);
+		}
+
+		@include desktop {
+
+			@include column-width(4);
+		}
+
+		&--full {
+
+			@include tablet {
+
+				@include column-width(8);
+			}
+
+			@include desktop {
+
+				@include column-width(8);
+			}
+
+			.entry-meta,
+			.entry-footer {
+				display: block;
+			}
+		}
+	}
+
+	.posts-navigation {
+		padding: $gap;
+	}
 }
 
 .article-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 
-  &__item {
-    width: 100%;
-    list-style: none;
-  }
+	&__item {
+		width: 100%;
+		list-style: none;
+	}
 }
 
 .search-form {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: flex-start;
 
-  input[type="submit"] {
-    background-color: inherit;
-    border: 1px solid white;
-  }
-  input[type="search"] {
-    // max-width: 5em;
-  }
-  label {
-    display: inline-block;
-    margin-bottom: $gap / 2;
-  }
+	input[type="submit"] {
+		background-color: inherit;
+		border: 1px solid #fff;
+	}
+
+	label {
+		display: inline-block;
+		margin-bottom: $gap / 2;
+	}
 }

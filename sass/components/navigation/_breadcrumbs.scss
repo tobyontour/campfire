@@ -1,14 +1,17 @@
 .breadcrumbs {
-  a {
-    text-decoration: none;
-    &:visited {
-      color: $color__text-breadcrumb;
-    }
-  }
-  font-weight: bold;
+
+	a {
+		text-decoration: none;
+
+		&:visited {
+			color: $color__text-breadcrumb;
+		}
+	}
+	font-weight: 900;
 }
 
 .breadcrumbs__wrapper {
-  @include center-section;
-  padding: $gap / 2 $gap;
+
+	@include center-section;
+	padding: $gap / 2 $gap;
 }

@@ -150,6 +150,7 @@ if ( ! function_exists( 'campfire_post_thumbnail' ) ) :
 	}
 endif;
 
+// phpcs:disable
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
 	 * Shim for sites older than 5.2.
@@ -160,3 +161,4 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+// phpcs:enable

@@ -217,38 +217,46 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 add_image_size( 'hero', 1200, 400, true );
 
+/**
+ * Campfire add body classes.
+ *
+ * @param mixed $classes Classes before modification.
+ * @return array The classes.
+ */
+function campfire_add_body_classes( $classes ) {
+
+	$key = array_search( 'page', $classes, true );
+	if ( false !== $key ) {
+		unset( $classes[ $key ] );
+	}
+
+	$sections = array(
+		'beavers',
+		'cubs',
+		'scouts',
+		'explorers',
+		'network',
+		'volunteers',
+	);
+
+	$count   = 0;
+	$section = '';
+	foreach ( get_the_category() as $term ) {
+		if ( in_array( strtolower( $term->name ), $sections, true ) ) {
+			$section = $term->name;
+			$count++;
+		}
+	}
+	if ( 1 === $count ) {
+		$classes[] = 'section-' . strtolower( $section );
+	}
+
+	return $classes;
+}
+
 add_filter(
 	'body_class',
-	function ( $classes ) {
-
-		$key = array_search( 'page', $classes, true );
-		if ( false !== $key ) {
-			unset( $classes[ $key ] );
-		}
-
-		$sections = array(
-			'beavers',
-			'cubs',
-			'scouts',
-			'explorers',
-			'network',
-			'volunteers',
-		);
-
-		$count   = 0;
-		$section = '';
-		foreach ( get_the_category() as $term ) {
-			if ( in_array( strtolower( $term->name ), $sections, true ) ) {
-				$section = $term->name;
-				$count++;
-			}
-		}
-		if ( 1 === $count ) {
-			$classes[] = 'section-' . strtolower( $section );
-		}
-
-		return $classes;
-	}
+	'campfire_add_body_classes'
 );
 
 /**
@@ -257,7 +265,7 @@ add_filter(
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function wpdocs_custom_excerpt_length( $length ) {
+function wpdocs_custom_excerpt_length( $length ) { // phpcs:ignore
 	return 20;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

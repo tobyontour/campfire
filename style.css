@@ -781,7 +781,7 @@ textarea {
 	right: -0.5rem;
 	z-index: 99999;
 	min-width: 200%;
-	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .main-navigation .main-nav ul ul li {
@@ -820,7 +820,7 @@ textarea {
 
 .main-navigation .menu-item a {
 	color: #fff;
-	font-weight: bold;
+	font-weight: 900;
 }
 
 .main-navigation button.menu-toggle {
@@ -850,7 +850,8 @@ textarea {
 	background-color: #00a794;
 }
 
-.main-navigation.toggled .menu-top-menu-container, .main-navigation.toggled ul {
+.main-navigation.toggled .menu-top-menu-container,
+.main-navigation.toggled ul {
 	background-color: #00a794;
 }
 
@@ -890,7 +891,7 @@ body.admin-bar .main-navigation {
 }
 
 .breadcrumbs {
-	font-weight: bold;
+	font-weight: 900;
 }
 
 .breadcrumbs a {
@@ -960,7 +961,7 @@ body.admin-bar .main-navigation {
 	text-indent: -9999px;
 	color: #fff;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 900;
 	text-align: center;
 }
 
@@ -1310,7 +1311,7 @@ body.single.section-network .content-header, body.single.section-network .conten
 .site-branding__title {
 	color: #fff;
 	text-decoration: none;
-	font-weight: bold;
+	font-weight: 900;
 	font-size: 24px;
 }
 
@@ -1437,54 +1438,68 @@ body.single.section-network .content-header, body.single.section-network .conten
 	max-width: 1200px;
 }
 
-.content--search article, .content--archive article {
+.content--search article,
+.content--archive article {
 	width: 100%;
 	padding: 0 2rem 2rem;
 }
 
-.content--search article a, .content--archive article a {
+.content--search article a,
+.content--archive article a {
 	text-decoration: none;
 	color: #404040;
 }
 
-.content--search .entry-meta, .content--search .entry-footer, .content--archive .entry-meta, .content--archive .entry-footer {
+.content--search .entry-meta,
+.content--search .entry-footer,
+.content--archive .entry-meta,
+.content--archive .entry-footer {
 	display: none;
 }
 
-.content--search .article-list__item, .content--archive .article-list__item {
+.content--search .article-list__item,
+.content--archive .article-list__item {
 	width: 100%;
 	border-bottom: 1px solid #ccc;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-	.content--search .article-list__item, .content--archive .article-list__item {
+	.content--search .article-list__item,
+	.content--archive .article-list__item {
 		width: 48.1%;
 	}
 }
 
 @media (min-width: 1024px) {
-	.content--search .article-list__item, .content--archive .article-list__item {
+	.content--search .article-list__item,
+	.content--archive .article-list__item {
 		width: 31.43333%;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-	.content--search .article-list__item--full, .content--archive .article-list__item--full {
+	.content--search .article-list__item--full,
+	.content--archive .article-list__item--full {
 		width: 64.76667%;
 	}
 }
 
 @media (min-width: 1024px) {
-	.content--search .article-list__item--full, .content--archive .article-list__item--full {
+	.content--search .article-list__item--full,
+	.content--archive .article-list__item--full {
 		width: 64.76667%;
 	}
 }
 
-.content--search .article-list__item--full .entry-meta, .content--search .article-list__item--full .entry-footer, .content--archive .article-list__item--full .entry-meta, .content--archive .article-list__item--full .entry-footer {
+.content--search .article-list__item--full .entry-meta,
+.content--search .article-list__item--full .entry-footer,
+.content--archive .article-list__item--full .entry-meta,
+.content--archive .article-list__item--full .entry-footer {
 	display: block;
 }
 
-.content--search .posts-navigation, .content--archive .posts-navigation {
+.content--search .posts-navigation,
+.content--archive .posts-navigation {
 	padding: 2rem;
 }
 
@@ -1501,7 +1516,7 @@ body.single.section-network .content-header, body.single.section-network .conten
 
 .search-form input[type="submit"] {
 	background-color: inherit;
-	border: 1px solid white;
+	border: 1px solid #fff;
 }
 
 .search-form label {
@@ -1805,7 +1820,7 @@ body.single.section-network .content-header, body.single.section-network .conten
 }
 
 .join-boxes__item .volunteers-logo {
-	font-weight: bold;
+	font-weight: 900;
 	font-size: 25px;
 }
 
