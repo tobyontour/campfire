@@ -10,6 +10,8 @@ Scouting brand guidelines.
 The intention is to be a clean, fast, and uncomplicated theme to setup. It should work perfectly
 well on mobiles, tablets, and desktops.
 
+More info can be found on [my website](https://techtoby.com/campfire/)
+
 Supported plugins
 -----------------
 
