@@ -30,19 +30,18 @@
 	}
 
 	.main-nav {
+		margin: 0 0 0 auto;
+		width: 100%;
 
 		@include mobile {
 			display: none;
 		}
-		margin-right: 0;
-		margin-left: auto;
-		width: 100%;
 
 		@include center-section;
 
 		@include tablet-plus {
 			padding-right: $gap;
-			// display: block;
+			margin-top: 0;
 		}
 
 		@include desktop {
@@ -185,4 +184,12 @@
 
 body.admin-bar .main-navigation {
 	top: 30px;
+
+	@include mobile {
+		top: 46px;
+
+		&.scrolled {
+			top: 0;
+		}
+	}
 }

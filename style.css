@@ -50,15 +50,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 /*
 p {
-  font-size: 16px;
+	font-size: 16px;
 
-  @include tablet {
-    font-size: 18px;
-  }
+	@include tablet {
+		font-size: 18px;
+	}
 
-  @include desktop {
-    font-size: 20px;
-  }
+	@include desktop {
+		font-size: 20px;
+	}
 }
 */
 /*--------------------------------------------------------------
@@ -734,8 +734,7 @@ textarea {
 }
 
 .main-navigation .main-nav {
-	margin-right: 0;
-	margin-left: auto;
+	margin: 0 0 0 auto;
 	width: 100%;
 	display: block;
 	margin-left: auto;
@@ -754,6 +753,7 @@ textarea {
 @media (min-width: 768px) {
 	.main-navigation .main-nav {
 		padding-right: 2rem;
+		margin-top: 0;
 	}
 }
 
@@ -890,6 +890,15 @@ body.admin-bar .main-navigation {
 	top: 30px;
 }
 
+@media (max-width: 767px) {
+	body.admin-bar .main-navigation {
+		top: 46px;
+	}
+	body.admin-bar .main-navigation.scrolled {
+		top: 0;
+	}
+}
+
 .breadcrumbs {
 	font-weight: 900;
 }
@@ -912,8 +921,8 @@ body.admin-bar .main-navigation {
 	padding: 1rem 2rem;
 }
 
-.accordion:after {
-	content: '\02795';
+.accordion::after {
+	content: "\02795";
 	/* Unicode character for "plus" sign (+) */
 	font-size: 13px;
 	color: #fff;
@@ -921,7 +930,7 @@ body.admin-bar .main-navigation {
 	margin-left: 5px;
 }
 
-.active:after {
+.active::after {
 	content: "\2796";
 	/* Unicode character for "minus" sign (-) */
 }
@@ -938,15 +947,17 @@ body.admin-bar .main-navigation {
 	transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
+/* Add a background color to the button if it is clicked on (add the .active
+   class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
 	background-color: #7413dc99;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
 	padding: 0 18px;
-	background-color: white;
+	background-color: #fff;
 	display: none;
 	overflow: hidden;
 }
@@ -1164,7 +1175,8 @@ body.single.section-beavers .main-navigation.scrolled {
 	background-color: #006ddf;
 }
 
-body.single.section-beavers .content-header, body.single.section-beavers .content-body__aside section {
+body.single.section-beavers .content-header,
+body.single.section-beavers .content-body__aside section {
 	background-color: #006ddf;
 }
 
@@ -1176,7 +1188,8 @@ body.single.section-cubs .main-navigation.scrolled {
 	background-color: #23a950;
 }
 
-body.single.section-cubs .content-header, body.single.section-cubs .content-body__aside section {
+body.single.section-cubs .content-header,
+body.single.section-cubs .content-body__aside section {
 	background-color: #23a950;
 }
 
@@ -1188,7 +1201,8 @@ body.single.section-scouts .main-navigation.scrolled {
 	background-color: #004851;
 }
 
-body.single.section-scouts .content-header, body.single.section-scouts .content-body__aside section {
+body.single.section-scouts .content-header,
+body.single.section-scouts .content-body__aside section {
 	background-color: #004851;
 }
 
@@ -1200,7 +1214,8 @@ body.single.section-explorers .main-navigation.scrolled {
 	background-color: #003982;
 }
 
-body.single.section-explorers .content-header, body.single.section-explorers .content-body__aside section {
+body.single.section-explorers .content-header,
+body.single.section-explorers .content-body__aside section {
 	background-color: #003982;
 }
 
@@ -1212,7 +1227,8 @@ body.single.section-network .main-navigation.scrolled {
 	background-color: #000;
 }
 
-body.single.section-network .content-header, body.single.section-network .content-body__aside section {
+body.single.section-network .content-header,
+body.single.section-network .content-body__aside section {
 	background-color: #000;
 }
 
@@ -1236,7 +1252,8 @@ body.single.section-network .content-header, body.single.section-network .conten
 	.front-page .main-content.has-sidebar article {
 		width: 56.43333%;
 	}
-	.front-page .main-content.has-sidebar aside, .front-page .main-content.has-sidebar #secondary {
+	.front-page .main-content.has-sidebar aside,
+	.front-page .main-content.has-sidebar #secondary {
 		width: 39.76667%;
 		background-color: #00a794;
 		padding: 2rem;
@@ -1251,7 +1268,9 @@ body.single.section-network .content-header, body.single.section-network .conten
 	color: #fff;
 }
 
-.front-page .main-content aside a, .front-page .main-content aside a:hover, .front-page .main-content aside a:visited {
+.front-page .main-content aside a,
+.front-page .main-content aside a:hover,
+.front-page .main-content aside a:visited {
 	color: #fff;
 }
 
@@ -1325,7 +1344,7 @@ body.single.section-network .content-header, body.single.section-network .conten
 
 .site-branding--mobile {
 	display: none;
-	margin: 0.5rem;
+	padding: 4px;
 	max-width: 200px;
 }
 
@@ -1340,7 +1359,6 @@ body.single.section-network .content-header, body.single.section-network .conten
 
 .site-branding--mobile .site-branding__title {
 	font-size: medium;
-	line-height: 1.3em;
 }
 
 .body__background-image {

@@ -1,67 +1,81 @@
 main {
-  .page-header {
-    background-color: $color__scout-purple;
-    color: $color__text-inverted;
-    margin: 0;
-  }
-  h1.page-title {
-    font-size: xx-large;
-    margin: 0;
-    padding: $gap;
-  }
-}
 
-// content-header
+	.page-header {
+		background-color: $color__scout-purple;
+		color: $color__text-inverted;
+		margin: 0;
+	}
+
+	h1.page-title {
+		font-size: xx-large;
+		margin: 0;
+		padding: $gap;
+	}
+}
 
 .content-header {
 	background-color: $color__scout-purple;
-  color: $color__text-inverted;
-  margin-bottom: $gap;
+	color: $color__text-inverted;
+	margin-bottom: $gap;
 
-  &__wrapper {
+	&__wrapper {
+
 		@include center-section;
 		padding: $gap;
 		z-index: 2;
-  }
+	}
 
-  &__title {
-    margin: 0;
-  }
+	&__title {
+		margin: 0;
+	}
 }
 
 .content-body {
-  @include center-section;
-  margin-bottom: $gap;
 
-  &--has-aside {
+	@include center-section;
+	margin-bottom: $gap;
+
+	&--has-aside {
+
 		@include container;
+
 		article {
+
 			@include column-width(12);
 		}
+
 		aside {
+
 			@include column-width(12);
 			padding: 0 0 $gap;
 		}
+
 		@include tablet-plus {
+
 			article {
+
 				@include column-width(8);
 			}
+
 			aside {
+
 				@include column-width(4);
 			}
 		}
 	}
 
-  &__aside {
+	&__aside {
+
 		section {
 			background-color: $color__scout-purple;
 			color: $color__text-inverted;
+			padding: $gap;
+			margin-bottom: $gap;
+
 			a {
 				color: $color__text-inverted;
 			}
 
-			padding: $gap;
-			margin-bottom: $gap;
 			h2 {
 				margin-top: 0;
 				font-size: large;
@@ -71,18 +85,24 @@ main {
 }
 
 .content-sidebar {
-  background-color: $color__background-title;
-  aside {
-    @include center-section;
-    @include container;
-    padding: $gap $gap 0;
-  }
-  section {
-    padding: $gap;
-    background-color: $color__background-body;
-    @include column-width(12);
-    @include tablet-plus {
-      @include column-width(6);
-    }
-  }
+	background-color: $color__background-title;
+
+	aside {
+
+		@include center-section;
+		@include container;
+		padding: $gap $gap 0;
+	}
+
+	section {
+		padding: $gap;
+		background-color: $color__background-body;
+
+		@include column-width(12);
+
+		@include tablet-plus {
+
+			@include column-width(6);
+		}
+	}
 }

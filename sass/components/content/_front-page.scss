@@ -1,57 +1,78 @@
 .front-page {
-  margin-top: -3rem;
+	margin-top: -3rem;
 
-  .main-content {
-    margin-top: $gap;
-    @include container;
-    article {
-      @include column-width(12);
-      padding: 0 $gap;
-    }
-    &.has-sidebar {
-      @include tablet-plus {
-        article {
-          @include column-width(7);
-        }
-        aside, #secondary {
-          @include column-width(5);
-          background-color: $color__scout-teal;
-          padding: $gap;
-          color: $color__text-inverted;
-        }
-      }
-    }
-    aside {
-      @include column-width(12);
-      background-color: $color__scout-teal;
-      padding: 0 $gap;
-      color: $color__text-inverted;
-      a, a:hover, a:visited {
-        color: $color__text-inverted;
-      }
-    }
-  }
+	.main-content {
+		margin-top: $gap;
+
+		@include container;
+
+		article {
+
+			@include column-width(12);
+			padding: 0 $gap;
+		}
+
+		&.has-sidebar {
+
+			@include tablet-plus {
+
+				article {
+
+					@include column-width(7);
+				}
+
+				aside,
+				#secondary {
+
+					@include column-width(5);
+					background-color: $color__scout-teal;
+					padding: $gap;
+					color: $color__text-inverted;
+				}
+			}
+		}
+
+		aside {
+
+			@include column-width(12);
+			background-color: $color__scout-teal;
+			padding: 0 $gap;
+			color: $color__text-inverted;
+
+			a,
+			a:hover,
+			a:visited {
+				color: $color__text-inverted;
+			}
+		}
+	}
 }
 
 .primary-sidebar {
-  @include container;
-  margin-top: $gap;
 
-  /* Then we define how is distributed the remaining space */
-  justify-content: space-between;
-  .widget {
-    @include column-width(12);
-    padding: 0 $gap;
-    @include tablet {
-      // padding: 0;
-      @include column-width(6);
-    }
-    @include desktop {
-      // padding: 0;
-      @include column-width(4);
-    }
-  }
-  .twitter-timeline {
-    max-height: 600px;
-  }
+	@include container;
+	margin-top: $gap;
+
+	/* Then we define how is distributed the remaining space */
+	justify-content: space-between;
+
+	.widget {
+
+		@include column-width(12);
+		padding: 0 $gap;
+
+		@include tablet {
+
+			@include column-width(6);
+		}
+
+		@include desktop {
+
+			@include column-width(4);
+		}
+	}
+
+	.twitter-timeline {
+		max-height: 600px;
+	}
 }

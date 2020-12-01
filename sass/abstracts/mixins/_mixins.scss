@@ -6,6 +6,7 @@
 }
 
 @mixin center-section {
+
 	@include center-block;
 	position: relative;
 	width: 100%;
@@ -14,10 +15,10 @@
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
+
 	@if ( $numberColumns == $columns__total ) {
 		width: 100%;
-	}
-	@else {
+	} @else {
 		width: ( ( ( $numberColumns * 100 ) ) / $columns__total ) - $columns__margin;
 	}
 }
@@ -27,10 +28,3 @@
 	flex-flow: row wrap;
 	justify-content: space-between;
 }
-
-// #primary {
-// 	outline: 1px dashed red;
-// }
-// .widget, article {
-// 	outline: 1px dashed purple;
-// }
