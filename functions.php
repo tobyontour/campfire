@@ -7,9 +7,9 @@
  * @package Campfire
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'CAMPFIRE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'CAMPFIRE_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'campfire_setup' ) ) :
@@ -133,33 +133,39 @@ function campfire_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
-	register_sidebar( array(
-		'name'          => 'Banner message',
-		'id'            => 'banner',
-		'description'   => esc_html__( 'Add any banner message here. Use sparingly.', 'campfire' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => 'Home Main Content',
-		'id'            => 'home-1',
-		'description'   => esc_html__( 'Add widgets here.', 'campfire' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => 'Page sidebar',
-		'id'            => 'page-1',
-		'description'   => esc_html__( 'Widgets to display alongside pages.', 'campfire' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => 'Banner message',
+			'id'            => 'banner',
+			'description'   => esc_html__( 'Add any banner message here. Use sparingly.', 'campfire' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => 'Home Main Content',
+			'id'            => 'home-1',
+			'description'   => esc_html__( 'Add widgets here.', 'campfire' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => 'Page sidebar',
+			'id'            => 'page-1',
+			'description'   => esc_html__( 'Widgets to display alongside pages.', 'campfire' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
 }
 add_action( 'widgets_init', 'campfire_widgets_init' );
@@ -168,11 +174,13 @@ add_action( 'widgets_init', 'campfire_widgets_init' );
  * Enqueue scripts and styles.
  */
 function campfire_scripts() {
-	wp_enqueue_style( 'campfire-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'campfire-style', get_stylesheet_uri(), array(), CAMPFIRE_VERSION );
+	wp_enqueue_style( 'campfire-font', 'https://fonts.googleapis.com/css?family=Nunito+Sans', array(), CAMPFIRE_VERSION );
+
 	wp_style_add_data( 'campfire-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'campfire-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'campfire-utils', get_template_directory_uri() . '/js/utils.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'campfire-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAMPFIRE_VERSION, true );
+	wp_enqueue_script( 'campfire-utils', get_template_directory_uri() . '/js/utils.js', array(), CAMPFIRE_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -209,35 +217,39 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 add_image_size( 'hero', 1200, 400, true );
 
-add_filter( 'body_class', function ( $classes ) {
+add_filter(
+	'body_class',
+	function ( $classes ) {
 
-	if (($key = array_search('page', $classes)) !== false) {
-    unset($classes[$key]);
-	}
-
-	$sections = [
-		'beavers',
-		'cubs',
-		'scouts',
-		'explorers',
-		'network',
-		'volunteers',
-	];
-
-	$count = 0;
-	$section = "";
-	foreach (get_the_category() as $term) {
-		if (in_array(strtolower($term->name), $sections)) {
-			$section = $term->name;
-			$count++;
+		$key = array_search( 'page', $classes, true );
+		if ( false !== $key ) {
+			unset( $classes[ $key ] );
 		}
-	}
-	if ( $count == 1) {
-		$classes[] = "section-" . strtolower($section);
-	}
 
-  return $classes;
-});
+		$sections = array(
+			'beavers',
+			'cubs',
+			'scouts',
+			'explorers',
+			'network',
+			'volunteers',
+		);
+
+		$count   = 0;
+		$section = '';
+		foreach ( get_the_category() as $term ) {
+			if ( in_array( strtolower( $term->name ), $sections, true ) ) {
+				$section = $term->name;
+				$count++;
+			}
+		}
+		if ( 1 === $count ) {
+			$classes[] = 'section-' . strtolower( $section );
+		}
+
+		return $classes;
+	}
+);
 
 /**
  * Filter the except length to 20 words.

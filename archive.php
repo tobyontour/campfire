@@ -37,7 +37,7 @@ get_header();
 				echo '</li>';
 			endwhile;
 
-			echo "</ul>";
+			echo '</ul>';
 
 			the_posts_navigation();
 
@@ -49,7 +49,7 @@ get_header();
 		?>
 
 		<section class="sidebar">
-		  <?php wp_get_archives(); ?>
+			<?php wp_get_archives(); ?>
 		</section>
 	</main><!-- #main -->
 

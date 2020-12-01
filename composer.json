@@ -25,6 +25,7 @@
     },
     "scripts": {
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+        "lint:wpfix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf",
         "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
         "make-pot": "wp i18n make-pot . languages/campefire.pot"
     },

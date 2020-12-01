@@ -11,10 +11,10 @@ get_header();
 
 ?>
 	<!-- single.php -->
-	<?php if ($url = get_the_post_thumbnail_url( null, 'hero' )) : ?>
+	<?php if ( $url = get_the_post_thumbnail_url( null, 'hero' ) ) : ?>
 	<style>
 	.body__background-image {
-		background-image: url(<?php echo $url ?>);
+		background-image: url(<?php echo $url; ?>);
 	}
 	</style>
 	<?php endif; ?>
@@ -64,43 +64,48 @@ get_header();
 				<?php endif; ?>
 					<?php
 					// For use in the loop, list 5 post titles related to first tag on current post.
-					$tags = wp_get_post_tags($post->ID);
+					$tags = wp_get_post_tags( $post->ID );
 
-					if ($tags) {
-						$term_ids = [];
-						foreach ($tags as $tag) {
+					if ( $tags ) {
+						$term_ids = array();
+						foreach ( $tags as $tag ) {
 							$term_ids[] = $tag->term_id;
 						}
-						$args = [
-							'tag__in' => $term_ids,
-							'post__not_in' => array($post->ID),
-							'posts_per_page' => 5,
+						$args     = array(
+							'tag__in'          => $term_ids,
+							'post__not_in'     => array( $post->ID ),
+							'posts_per_page'   => 5,
 							'caller_get_posts' => 1,
-						];
-						$my_query = new WP_Query($args);
-						if ( $my_query->have_posts() ) : ?>
+						);
+						$my_query = new WP_Query( $args );
+						if ( $my_query->have_posts() ) : 
+							?>
 							<section class="related-links">
 								<h2>Related posts</h2>
 								<ul class="related-links__posts">
 								<?php
-									while ($my_query->have_posts()) : $my_query->the_post(); ?>
+								while ( $my_query->have_posts() ) :
+									$my_query->the_post(); 
+									?>
 									<li class="related-links__post">
 										<a
 											class="related-links__link"
-											href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+											href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 									</li>
 									<?php
-									endwhile;?>
+									endwhile;
+								?>
 								</ul>
 							</section>
-							<?php endif;
+							<?php 
+							endif;
 						wp_reset_query();
 
 					}
 					?>
 			</aside>
 
-			<?php
+				<?php
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					?>
@@ -110,10 +115,10 @@ get_header();
 							<?php comments_template(); ?>
 						</div>
 					</section>
-				<?php
+					<?php
 				endif;
 		endwhile; // End of the loop.
-		?>
+			?>
 		</section>
 		<section class="content-sidebar">
 			<?php get_sidebar(); ?>

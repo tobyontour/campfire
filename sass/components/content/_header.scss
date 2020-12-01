@@ -2,7 +2,10 @@
   display: inline-block;
   width: auto;
   position: absolute;
-  top: 5.5rem;
+  top: 1.5rem;
+  @include tablet-plus {
+    top: 5.5rem;
+  }
   left: 40px;
   &__logo {
     background-image: $url__org-logo;
@@ -34,10 +37,11 @@
       width: 40px;
       height: 40px;
       float: left;
+      margin-right: 0.4rem;
     }
     .site-branding__title {
       font-size: medium;
-      margin-left: 50px;
+      // margin-left: 50px;
       line-height: 1.3em;
     }
   }

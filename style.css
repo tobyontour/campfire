@@ -21,7 +21,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -49,7 +48,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-
 /*
 p {
   font-size: 16px;
@@ -63,19 +61,14 @@ p {
   }
 }
 */
-
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
-
 /* Normalize
 --------------------------------------------- */
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
 /* Document
 	 ========================================================================== */
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -87,7 +80,6 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
 /**
  * Remove the margin in all browsers.
  */
@@ -113,7 +105,6 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
-
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -135,7 +126,6 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
-
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -201,7 +191,6 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -211,7 +200,6 @@ img {
 
 /* Forms
 	 ========================================================================== */
-
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -357,7 +345,6 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
-
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -374,7 +361,6 @@ summary {
 
 /* Misc
 	 ========================================================================== */
-
 /**
  * Add the correct display in IE 10+.
  */
@@ -391,7 +377,6 @@ template {
 
 /* Box sizing
 --------------------------------------------- */
-
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -407,7 +392,6 @@ html {
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
-
 /* Typography
 --------------------------------------------- */
 body,
@@ -570,7 +554,7 @@ table {
 --------------------------------------------- */
 a {
 	color: #7413dc;
-	text-decoration-style: dashed;
+	text-decoration-style: dotted;
 	text-underline-position: under;
 }
 
@@ -578,9 +562,7 @@ a:visited {
 	color: #420b7e;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover, a:focus, a:active {
 	color: #420b7e;
 }
 
@@ -588,8 +570,7 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -615,8 +596,7 @@ input[type="submit"]:hover {
 	border-color: #7413dc;
 }
 
-button:active,
-button:focus,
+button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -690,80 +670,11 @@ textarea {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-	display: block;
-	width: 100%;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 768px) {
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-	}
-}
-
-.site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -791,6 +702,7 @@ textarea {
 	position: fixed;
 	top: 0;
 	height: 3.5rem;
+	width: 100%;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
@@ -798,9 +710,8 @@ textarea {
 }
 
 @media (min-width: 768px) {
-
 	.main-navigation {
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: rgba(0, 0, 0, 0.4);
 	}
 }
 
@@ -809,7 +720,107 @@ textarea {
 }
 
 .main-navigation.scrolled .site-branding--mobile {
+	position: absolute;
+	top: 0;
 	display: block;
+}
+
+.main-navigation a {
+	text-decoration: none;
+}
+
+.main-navigation ul {
+	list-style: none;
+}
+
+.main-navigation .main-nav {
+	margin-right: 0;
+	margin-left: auto;
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+}
+
+@media (max-width: 767px) {
+	.main-navigation .main-nav {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.main-navigation .main-nav {
+		padding-right: 2rem;
+	}
+}
+
+.main-navigation .main-nav ul.nav-menu {
+	display: flex;
+}
+
+.main-navigation .main-nav ul.nav-menu > li {
+	margin-left: 0.8rem;
+	display: block;
+	padding: 1rem 2rem;
+}
+
+@media (min-width: 768px) {
+	.main-navigation .main-nav ul.nav-menu > li {
+		padding: 1rem 0;
+	}
+}
+
+.main-navigation .main-nav ul ul {
+	display: none;
+	text-align: right;
+	position: absolute;
+	top: 1.5em;
+	right: -0.5rem;
+	z-index: 99999;
+	min-width: 200%;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main-navigation .main-nav ul ul li {
+	display: block;
+}
+
+@media (min-width: 768px) {
+	.main-navigation .main-nav ul li:hover > ul {
+		display: block;
+	}
+}
+
+.main-navigation .main-nav li > ul {
+	margin: 0;
+}
+
+.main-navigation .main-nav ul > li {
+	position: relative;
+}
+
+.main-navigation .main-nav .sub-menu {
+	margin-top: 2rem;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.main-navigation .main-nav .sub-menu li {
+	display: block;
+	margin: 1rem 0.5rem;
+}
+
+.main-navigation .nav-menu {
+	margin-left: auto;
+	margin-right: 0;
+	float: right;
+}
+
+.main-navigation .menu-item a {
+	color: #fff;
+	font-weight: bold;
 }
 
 .main-navigation button.menu-toggle {
@@ -825,49 +836,35 @@ textarea {
 	fill: #fff;
 }
 
-.main-navigation .menu-top-menu-container {
-	margin-right: 0;
-	margin-left: auto;
-	width: 100%;
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-
-	.main-navigation .menu-top-menu-container {
-		max-width: 90%;
+@media (min-width: 768px) {
+	.main-navigation button.menu-toggle {
+		display: none;
 	}
 }
 
-@media (min-width: 1024px) {
-
-	.main-navigation .menu-top-menu-container {
-		max-width: 75%;
-	}
-}
-
-.main-navigation .nav-menu {
-	margin-left: auto;
-	margin-right: 0;
-	float: right;
-	padding: 1rem;
-}
-
-.main-navigation .menu-item {
-	margin-left: 1em;
-}
-
-.main-navigation .menu-item a {
-	color: #fff;
-	font-weight: bold;
+.main-navigation button.menu-toggle:focus {
+	border: none;
 }
 
 .main-navigation.toggled {
 	background-color: #00a794;
 }
 
-.main-navigation.toggled .menu-top-menu-container,
-.main-navigation.toggled .sub-menu {
+.main-navigation.toggled .menu-top-menu-container, .main-navigation.toggled ul {
 	background-color: #00a794;
+}
+
+.main-navigation.toggled .main-nav {
+	display: block;
+}
+
+.main-navigation.toggled .main-nav > ul {
+	display: block;
+	width: 100%;
+}
+
+.main-navigation.toggled .sub-menu {
+	display: none;
 }
 
 .main-navigation.toggled li {
@@ -879,10 +876,10 @@ textarea {
 
 .main-navigation.toggled .site-branding--mobile {
 	display: block;
+	margin-bottom: 0;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
 	.main-navigation .site-branding--mobile .site-branding__title {
 		display: none;
 	}
@@ -914,9 +911,8 @@ body.admin-bar .main-navigation {
 	padding: 1rem 2rem;
 }
 
-.accordion::after {
-	content: "\02795";
-
+.accordion:after {
+	content: '\02795';
 	/* Unicode character for "plus" sign (+) */
 	font-size: 13px;
 	color: #fff;
@@ -924,9 +920,8 @@ body.admin-bar .main-navigation {
 	margin-left: 5px;
 }
 
-.active::after {
+.active:after {
 	content: "\2796";
-
 	/* Unicode character for "minus" sign (-) */
 }
 
@@ -943,8 +938,7 @@ body.admin-bar .main-navigation {
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.accordion:hover {
+.active, .accordion:hover {
 	background-color: #7413dc99;
 }
 
@@ -958,12 +952,7 @@ body.admin-bar .main-navigation {
 
 /* Logos
 --------------------------------------------- */
-.beavers-logo,
-.cubs-logo,
-.scouts-logo,
-.explorers-logo,
-.network-logo,
-.volunteers-logo {
+.beavers-logo, .cubs-logo, .scouts-logo, .explorers-logo, .network-logo, .volunteers-logo {
 	background-position-y: center;
 	background-position-x: center;
 	background-repeat: no-repeat;
@@ -1066,11 +1055,9 @@ main h1.page-title {
 }
 
 @media (min-width: 768px) {
-
 	.content-body--has-aside article {
 		width: 64.76667%;
 	}
-
 	.content-body--has-aside aside {
 		width: 31.43333%;
 	}
@@ -1116,7 +1103,6 @@ main h1.page-title {
 }
 
 @media (min-width: 768px) {
-
 	.content-sidebar section {
 		width: 48.1%;
 	}
@@ -1177,8 +1163,7 @@ body.single.section-beavers .main-navigation.scrolled {
 	background-color: #006ddf;
 }
 
-body.single.section-beavers .content-header,
-body.single.section-beavers .content-body__aside section {
+body.single.section-beavers .content-header, body.single.section-beavers .content-body__aside section {
 	background-color: #006ddf;
 }
 
@@ -1190,8 +1175,7 @@ body.single.section-cubs .main-navigation.scrolled {
 	background-color: #23a950;
 }
 
-body.single.section-cubs .content-header,
-body.single.section-cubs .content-body__aside section {
+body.single.section-cubs .content-header, body.single.section-cubs .content-body__aside section {
 	background-color: #23a950;
 }
 
@@ -1203,8 +1187,7 @@ body.single.section-scouts .main-navigation.scrolled {
 	background-color: #004851;
 }
 
-body.single.section-scouts .content-header,
-body.single.section-scouts .content-body__aside section {
+body.single.section-scouts .content-header, body.single.section-scouts .content-body__aside section {
 	background-color: #004851;
 }
 
@@ -1216,8 +1199,7 @@ body.single.section-explorers .main-navigation.scrolled {
 	background-color: #003982;
 }
 
-body.single.section-explorers .content-header,
-body.single.section-explorers .content-body__aside section {
+body.single.section-explorers .content-header, body.single.section-explorers .content-body__aside section {
 	background-color: #003982;
 }
 
@@ -1229,8 +1211,7 @@ body.single.section-network .main-navigation.scrolled {
 	background-color: #000;
 }
 
-body.single.section-network .content-header,
-body.single.section-network .content-body__aside section {
+body.single.section-network .content-header, body.single.section-network .content-body__aside section {
 	background-color: #000;
 }
 
@@ -1251,13 +1232,10 @@ body.single.section-network .content-body__aside section {
 }
 
 @media (min-width: 768px) {
-
 	.front-page .main-content.has-sidebar article {
 		width: 56.43333%;
 	}
-
-	.front-page .main-content.has-sidebar aside,
-	.front-page .main-content.has-sidebar #secondary {
+	.front-page .main-content.has-sidebar aside, .front-page .main-content.has-sidebar #secondary {
 		width: 39.76667%;
 		background-color: #00a794;
 		padding: 2rem;
@@ -1272,9 +1250,7 @@ body.single.section-network .content-body__aside section {
 	color: #fff;
 }
 
-.front-page .main-content aside a,
-.front-page .main-content aside a:hover,
-.front-page .main-content aside a:visited {
+.front-page .main-content aside a, .front-page .main-content aside a:hover, .front-page .main-content aside a:visited {
 	color: #fff;
 }
 
@@ -1283,7 +1259,6 @@ body.single.section-network .content-body__aside section {
 	flex-flow: row wrap;
 	justify-content: space-between;
 	margin-top: 2rem;
-
 	/* Then we define how is distributed the remaining space */
 	justify-content: space-between;
 }
@@ -1294,14 +1269,12 @@ body.single.section-network .content-body__aside section {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
 	.primary-sidebar .widget {
 		width: 48.1%;
 	}
 }
 
 @media (min-width: 1024px) {
-
 	.primary-sidebar .widget {
 		width: 31.43333%;
 	}
@@ -1315,8 +1288,14 @@ body.single.section-network .content-body__aside section {
 	display: inline-block;
 	width: auto;
 	position: absolute;
-	top: 5.5rem;
+	top: 1.5rem;
 	left: 40px;
+}
+
+@media (min-width: 768px) {
+	.site-branding {
+		top: 5.5rem;
+	}
 }
 
 .site-branding__logo {
@@ -1355,11 +1334,11 @@ body.single.section-network .content-body__aside section {
 	width: 40px;
 	height: 40px;
 	float: left;
+	margin-right: 0.4rem;
 }
 
 .site-branding--mobile .site-branding__title {
 	font-size: medium;
-	margin-left: 50px;
 	line-height: 1.3em;
 }
 
@@ -1384,7 +1363,6 @@ body.single.section-network .content-body__aside section {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
 	.banner-sidebar {
 		padding-top: 6rem;
 		margin: 0 2rem 0 20em;
@@ -1392,7 +1370,6 @@ body.single.section-network .content-body__aside section {
 }
 
 @media (min-width: 1024px) {
-
 	.banner-sidebar {
 		margin: 0;
 		height: 14rem;
@@ -1405,7 +1382,6 @@ body.single.section-network .content-body__aside section {
 }
 
 @media (min-width: 1024px) {
-
 	.banner-sidebar + .front-page {
 		margin-top: 7rem;
 	}
@@ -1423,7 +1399,6 @@ body.single.section-network .content-body__aside section {
 }
 
 @media (min-width: 1024px) {
-
 	.banner-sidebar .widget {
 		max-width: 26rem;
 	}
@@ -1462,72 +1437,54 @@ body.single.section-network .content-body__aside section {
 	max-width: 1200px;
 }
 
-.content--search article,
-.content--archive article {
+.content--search article, .content--archive article {
 	width: 100%;
 	padding: 0 2rem 2rem;
 }
 
-.content--search article a,
-.content--archive article a {
+.content--search article a, .content--archive article a {
 	text-decoration: none;
 	color: #404040;
 }
 
-.content--search .entry-meta,
-.content--search .entry-footer,
-.content--archive .entry-meta,
-.content--archive .entry-footer {
+.content--search .entry-meta, .content--search .entry-footer, .content--archive .entry-meta, .content--archive .entry-footer {
 	display: none;
 }
 
-.content--search .article-list__item,
-.content--archive .article-list__item {
+.content--search .article-list__item, .content--archive .article-list__item {
 	width: 100%;
 	border-bottom: 1px solid #ccc;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
-	.content--search .article-list__item,
-	.content--archive .article-list__item {
+	.content--search .article-list__item, .content--archive .article-list__item {
 		width: 48.1%;
 	}
 }
 
 @media (min-width: 1024px) {
-
-	.content--search .article-list__item,
-	.content--archive .article-list__item {
+	.content--search .article-list__item, .content--archive .article-list__item {
 		width: 31.43333%;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-
-	.content--search .article-list__item--full,
-	.content--archive .article-list__item--full {
+	.content--search .article-list__item--full, .content--archive .article-list__item--full {
 		width: 64.76667%;
 	}
 }
 
 @media (min-width: 1024px) {
-
-	.content--search .article-list__item--full,
-	.content--archive .article-list__item--full {
+	.content--search .article-list__item--full, .content--archive .article-list__item--full {
 		width: 64.76667%;
 	}
 }
 
-.content--search .article-list__item--full .entry-meta,
-.content--search .article-list__item--full .entry-footer,
-.content--archive .article-list__item--full .entry-meta,
-.content--archive .article-list__item--full .entry-footer {
+.content--search .article-list__item--full .entry-meta, .content--search .article-list__item--full .entry-footer, .content--archive .article-list__item--full .entry-meta, .content--archive .article-list__item--full .entry-footer {
 	display: block;
 }
 
-.content--search .posts-navigation,
-.content--archive .posts-navigation {
+.content--search .posts-navigation, .content--archive .posts-navigation {
 	padding: 2rem;
 }
 
@@ -1564,7 +1521,6 @@ body.single.section-network .content-body__aside section {
 
 /* Widgets
 --------------------------------------------- */
-
 /* calendar widget */
 #wp-calendar {
 	width: 100%;
@@ -1712,10 +1668,8 @@ body.single.section-network .content-body__aside section {
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
-
 /* Jetpack infinite scroll
 --------------------------------------------- */
-
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -1730,10 +1684,8 @@ body.single.section-network .content-body__aside section {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
 /* Accessibility
 --------------------------------------------- */
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -1776,20 +1728,16 @@ body.single.section-network .content-body__aside section {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
 	/*rtl:ignore*/
 	float: left;
-
 	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
-
 	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
@@ -1805,7 +1753,6 @@ body.single.section-network .content-body__aside section {
 
 /* Blocks
 --------------------------------------------- */
-
 /* Navigation
 --------------------------------------------- */
 .join-boxes {
@@ -1885,3 +1832,5 @@ body.single.section-network .content-body__aside section {
 .join-boxes__item--volunteers {
 	background-color: #7413dc;
 }
+
+/*# sourceMappingURL=style.css.map */

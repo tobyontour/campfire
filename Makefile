@@ -1,4 +1,5 @@
 # composer lint:wpcs : checks all PHP files against PHP Coding Standards.
+# composer lint:wpfix : Fixes code to PHP Coding Standards.
 # composer lint:php : checks all PHP files for syntax errors.
 # composer make-pot : generates a .pot file in the languages/ directory.
 # npm run compile:css : compiles SASS files to css.
