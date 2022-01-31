@@ -62,7 +62,7 @@ get_header();
 		<a class="join-boxes__link" href="/explorers">
 				<div class="join-boxes__logo explorers-logo">Explorers</div>
 		<div class="join-boxes__text">
-			<p>10½-14 years</p>
+			<p>14-18 years</p>
 			<p>Build confidence, resilience and a sense of adventure</p>
 		</div>
 		</a>
@@ -75,7 +75,7 @@ get_header();
 		<a class="join-boxes__link" href="/network">
 				<div class="join-boxes__logo network-logo">Network</div>
 		<div class="join-boxes__text">
-			<p>10½-14 years</p>
+			<p>18-25 years</p>
 			<p>Build confidence, resilience and a sense of adventure</p>
 		</div>
 		</a>
